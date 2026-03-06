@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Google Place API 爬蟲應用</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    body {
+      background-color: #F2EDE6;
+      min-height: 100vh;
+      font-family: "Noto Sans TC", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg"
+     style="background-color:#7A6857;">
+  <div class="container">
+    <a class="navbar-brand text-white fw-semibold">
+      作品展示與介紹
+    </a>
+  </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h1 class="mb-2">Google Place API 爬蟲應用</h1>
+    <p class="text-muted">
+	本專案透過 Google Places API 蒐集台北市酒吧與甜點店資料，分析其地理分布，並以互動式熱點地圖呈現商業集中區域。
+    </p>
+	<div class="d-flex flex-wrap gap-2">
+		<span class="badge"style="background-color:#C8B6A6;color:white">Python</span>
+		<span class="badge"style="background-color:#D7C2AD;color:white">Google Places API</span>
+		<span class="badge"style="background-color:#B7A89A;color:white">Folium</span>
+		<span class="badge"style="background-color:#A4907C;color:white">HeatMap</span>
+	</div>
+  </div>
+  
+  <div class="container mt-5">
+  <h2 class="mb-3">程式設計與技術應用</h2>
+
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#C8B6A6;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#api-collect"
+  >
+    API 資料蒐集（requests）
+  </button>
+
+  <div class="collapse" id="api-collect">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      使用 requests 套件向 Google Places API 發送 HTTP 請求，
+      取得指定關鍵字（酒吧、甜點店）在特定範圍內的店家資料。
+      透過參數設定 location、radius 與 keyword，
+      控制資料搜尋的地理範圍與類型。
+    </div>
+  </div>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#B7A89A;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#next_page_token"
+  >
+    分頁處理（next_page_token）
+  </button>
+
+  <div class="collapse" id="next_page_token">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      Google Places API 單次請求最多回傳 20 筆資料，
+	  本專案透過 next_page_token 搭配迴圈，
+	  分頁取得最多三頁資料，確保資料蒐集的完整性。
+    </div>
+  </div>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#A4907C;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#try_except"
+  >
+    例外狀況與資料檢查(Try/Except)
+  </button>
+
+  <div class="collapse" id="try_except">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      在爬蟲資料抓取時，加入 Try/Except 例外控制，
+	  避免在執行過程中產生錯誤，導致程式無法運行。
+    </div>
+  </div>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#8F7A66;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#data_cleaning"
+  >
+    資料處理與結構化（Pandas）
+  </button>
+
+  <div class="collapse" id="data_cleaning">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      將 API 回傳的資料轉換為 DataFrame，
+	  並透過欄位拆解與資料清洗，建立適合地理視覺化的資料結構。
+    </div>
+  </div>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#756554;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#folium"
+  >
+    地理視覺化（Folium）
+  </button>
+
+  <div class="collapse" id="folium">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      使用 Folium 建立互動式地圖，並結合 HeatMap 呈現商家密集程度。
+	  同時透過不同顏色的標記區分酒吧與甜點店，提升視覺辨識度與互動性。
+    </div>
+  </div>
+  </div>
+  
+  <div class="container mt-4">
+  <div class="card"
+     style="background-color:#F5EFE6;border:1px solid #D6CCC2;">
+
+  <div class="card-body d-flex align-items-center">
+
+    <div class="me-auto">
+      <h4 class="mb-1" style="color:#4A4A4A;">
+        程式碼說明
+      </h4>
+      <small style="color:#8C7B6B;">
+        點擊查看本專案的程式碼結構與說明
+      </small>
+    </div>
+
+    <a href="program_code.html"
+       target="_blank"
+       class="btn"
+       style="background-color:#8F7A66;color:white;">
+      Code
+    </a>
+
+  </div>
+  </div>
+  </div>
+
+  <div class="container mt-5">
+  <div class="card shadow-sm"
+       style="background-color:#F5EFE6;border:1px solid #D6CCC2">
+    <div class="card-body">
+      <h2 class="mb-3" style="color:#4A4A4A">互動式熱點地圖</h2>
+
+      <div class="ratio ratio-16x9 mb-3">
+        <iframe
+          src="taipei_bars_heatmap_with_popup.html"
+          title="台北酒吧與甜點店熱點地圖"
+          loading="lazy"
+		  style="border-radius:12px">
+        </iframe>
+      </div>
+
+      <p class="mb-0" style="color:#8C7B6B;">
+        <span style="color:#7DA1C4;">🔵 藍色：酒吧</span>　
+        <span style="color:#C27B7B;">🔴 紅色：甜點店</span>
+        （點擊可查看店名與地址）
+      </p>
+    </div>
+  </div>
+  </div>
+
+  <div class="container mt-4">
+  <div class="card shadow-sm rounded-4"
+       style="background-color:#F5EFE6;border:1px solid #D6CCC2;">
+    <div class="card-body d-flex align-items-center">
+      <div class="me-auto">
+        <h4 class="mb-1" style="color:#4A4A4A;">
+          資料檔案
+        </h4>
+        <small style="color:#8C7B6B;">
+          點擊以下連結可在新分頁查看完整資料表
+        </small>
+      </div>
+	  
+      <a href="bars.html"
+         target="_blank"
+         class="btn ms-2"
+         style="background-color:#8F7A66;color:white;">
+        bar.csv
+      </a>
+
+      <a href="dessert.html"
+         target="_blank"
+         class="btn ms-2"
+         style="background-color:#8F7A66;color:white;">
+        dessert.csv
+      </a>
+    </div>
+  </div>
+  </div>
+  
+  <div class="container mt-5">
+  <h2 class="mb-3", style="color:#4A4A4A">統整結論</h2>
+  <h4 class="mt-4 mb-1", style="color:#4A4A4A">一、整體市場現況</h4>
+  <small style="color:#8C7B6B;">(依據熱點圖及佐證資料分析)</small>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#A68A64;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#taipei101"
+  >
+    台北101核心商圈（信義計畫區) : 熱點高度集中，呈現明顯高密度熱區
+  </button>
+
+  <div class="collapse" id="taipei101">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      <div class="mb-2">外部資料佐證:
+	  <li>
+	  <a href="https://www.cna.com.tw/news/afe/202401110308.aspx" target="_blank"
+	  style="color:#4A4A4A">
+	  台北101購物中心
+	  </a>
+	  長期為全台百貨營收前段班，顯示區域消費力強。</li>
+	  <li>
+	  <a href="https://epaper.land.gov.taipei/Item/Detail/%E8%87%BA%E5%8C%97%E5%B8%82%E6%88%BF%E5%9C%B0%E5%B8%82%E5%A0%B4%E5%8B%95%E6%85%8B-113%E5%B9%B4%E8%BE%A6%E5%85%AC%E5%8F%8A%E5%BA%97%E9%9D%A2%E5%B8%82"
+	  target="_blank" style="color:#4A4A4A">
+	  台北市房地市場動態
+	  </a>
+	  指出信義計畫區為台北市租金最高區段之一。</li>
+	  <li>品牌多集中於百貨體系與大型商場，市場成熟度高。</li>
+	  </div>
+	  
+	  <div class="mt-2 mb-2">推論結論:
+	  <li>屬於「高消費 × 高競爭」的成熟市場。</li>
+	  <li>適合品牌型、資本型經營者，新創進入門檻較高。</li>
+	  </div>
+    </div>
+  </div>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#C2A78D;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#east"
+  >
+    東區（敦化南路、忠孝商圈) : 熱點密度為全區最高區段之一
+  </button>
+
+  <div class="collapse" id="east">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      <div class="mb-2">外部資料佐證:
+	  <li>
+	  <a href="https://www.readr.tw/project/eastern-district-of-taipei"
+	  target="_blank" style="color:#4A4A4A">
+	  媒體報導
+	  </a>
+	  指出東區面臨高租金壓力與空店面問題。</li>
+	  <li>店面租金長期維持高檔水準。</li>
+	  <li>屬於夜生活成熟商圈，品牌與既有店家聚集。</li>
+      </div>
+	  
+	  <div class="mt-2 mb-2">推論結論:
+	  <li>夜生活成熟，但市場目前處於飽和走向衰退的過程。</li>
+	  <li>新進者需創造強烈差異化才能突圍。</li>
+	  </div>
+	</div>
+  </div>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#BFA58A;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#nanjing"
+  >
+    南京東路／中山商辦區 : 熱點分布穩定，但多為商務型分布
+  </button>
+
+  <div class="collapse" id="nanjing">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      <div class="mb-2">外部資料佐證:
+	  <li>
+	  <a href="https://vocus.cc/article/631eec3bfd89780001afa824"
+	  target="_blank" style="color:#4A4A4A">
+	  南京東路／中山商辦區
+	  </a>
+	  為台北主要商辦走廊之一。</li>
+	  <li>
+	  <a href="https://tw.news.yahoo.com/%E7%99%BD%E9%A0%98%E4%B8%8A%E7%8F%AD%E6%97%8F-%E9%80%9B%E8%A1%97%E4%BA%BA%E6%BD%AE%E5%A4%9A-%E4%B8%AD%E5%B1%B1%E5%8D%97%E8%A5%BF%E5%95%86%E5%9C%88%E6%88%90%E9%A4%90%E9%A3%B2-%E7%B4%9A%E6%88%B0%E5%8D%80-035511347.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAADhw9QB77Jc51F8LSWreqGgqetCwvnOFBJ7oT6GI8oR9xhvI0jxSe69eG_2VN3tU21gjwptUbt47FcX-9gFHVGw3zJqpH58y4vOsgEKEcxXXjCpnpvZHP_ukO9GaYJCdso9PukfF0_IOQtlbQUA_vwRR8iWOiaeerDjsWkG_sp-n"
+	  target="_blank" style="color:#4A4A4A">
+	  新聞報導
+	  </a>
+	  指出該區辦公室密集，餐飲多以商務客群為主。</li>
+	  <li>客群以平日上班族為主，假日人流較弱。</li>
+      </div>
+	  
+	  <div class="mt-2 mb-2">推論結論:
+	  <li>客源穩定但以商務型需求為主。</li>
+	  <li>屬於成熟穩定型市場，創新空間有限。</li>
+	  </div>
+    </div>
+  </div>
+  
+  <button
+    class="btn mb-2 w-100 text-start"
+	style="background-color:#9C8B7A;color:white"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#xinyi"
+  >
+    信義南側／吳興街／六張犁一帶 : 熱點分布相對分散，競爭密度較低
+  </button>
+
+  <div class="collapse" id="xinyi">
+    <div class="card card-body" style="background-color:#F5EFE6;color:#4A4A4A">
+      <div class="mb-2">外部資料佐證:
+	  <li>台北捷運公司公開資料顯示⌈六張犁站⌋
+	  <a href="in.html" target="_blank" style="color:#4A4A4A">進站</a>
+	  <a href="out.html" target="_blank" style="color:#4A4A4A">出站</a>
+	  人流穩定，屬於生活型站點。
+	  </li>
+	  <li>根據
+	  <a href="https://rent.thurc.org.taipei/Rental/Site/liuzhangli/1" 
+	  target="_blank" style="color:#4A4A4A">
+	  公開資料
+	  </a>
+	  顯示，該區域以居住與生活機能為主要發展方向，可推論具有較高的住宅人口比例。</li>
+	  <li>網路搜尋店面租金相較於以上區域明顯較低。</li>
+      </div>
+	  
+	  <div class="mt-2 mb-2">推論結論:
+	  <li>競爭相對低。</li>
+	  <li>租金負擔較小。</li>
+	  <li>社區型消費具穩定性。</li>
+	  <li>屬於潛力發展區。</li>
+	  </div>
+    </div>
+  </div>
+  
+  <h4 class="mt-4 mb-3" style="color:#4A4A4A;">二、選址建議</h4>
+  <button
+  class="btn mb-2 w-100 text-start"
+  style="background-color:#8F7A66;color:white;"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#bar">
+  酒吧
+  </button>
+
+  <div class="collapse" id="bar">
+  <button
+    class="btn w-100 text-start mb-1"
+    style="background-color:#CBBBA0;color:#4A4A4A;"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#bar-area">
+    推薦區域
+  </button>
+
+  <div class="collapse" id="bar-area">
+    <div class="card card-body"
+         style="background-color:#F5EFE6;border:1px solid #D6CCC2;color:#6E5C4F;">
+      吳興街商圈、六張犁捷運站周邊、信義路五段靠住宅段
+    </div>
+  </div>
+
+  <button
+    class="btn w-100 text-start"
+    style="background-color:#CBBBA0;color:#4A4A4A;"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#bar-reason">
+    佐證邏輯
+  </button>
+
+  <div class="collapse" id="bar-reason">
+    <div class="card card-body"
+         style="background-color:#F5EFE6;border:1px solid #D6CCC2;color:#6E5C4F;">
+    <div>1. 競爭密度低於核心商圈（熱點圖）</div>
+    <div>2. 租金壓力較低（市場資訊）</div>
+    <div>3. 捷運通勤人口穩定（捷運公開資料）</div>
+    <div>4. 住宅混合型客群具下班小酌需求</div>
+	<div class="mt-2">結論:適合社區型精品酒吧或特色小型品牌發展</div>
+	</div>
+  </div>
+  </div>
+
+  <button
+  class="btn mb-2 w-100 text-start"
+  style="background-color:#8F7A66;color:white;"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#dessert">
+  甜點店
+  </button>
+
+  <div class="collapse" id="dessert">
+
+  <button
+    class="btn w-100 text-start mb-1"
+    style="background-color:#CBBBA0;color:#4A4A4A;"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#dessert-area">
+    推薦區域
+  </button>
+
+  <div class="collapse" id="dessert-area">
+    <div class="card card-body"
+         style="background-color:#F5EFE6;border:1px solid #D6CCC2;color:#6E5C4F;">
+      吳興街住宅區、象山捷運站周邊、六張犁文青區
+    </div>
+  </div>
+
+  <button
+    class="btn w-100 text-start"
+    style="background-color:#CBBBA0;color:#4A4A4A;"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#dessert-reason">
+    佐證邏輯
+  </button>
+
+  <div class="collapse" id="dessert-reason">
+    <div class="card card-body"
+         style="background-color:#F5EFE6;border:1px solid #D6CCC2;color:#6E5C4F;">
+    <div>1. 住宅人口穩定(都市更新公開資訊)</div>
+    <div>2. 象山站為生活型與觀光混合站點(捷運公開資料)</div>
+    <div>3. 甜點業態需白天人流與女性客群支撐</div>
+    <div>4. 生活圈型商圈較有日常消費基礎</div>
+	<div class="mt-2">結論:適合日常型、社區型甜點品牌發展</div>
+    </div>
+  </div>
+  </div>
+  
+  <h4 class="mt-4 mb-3" style="color:#4A4A4A;">三、觀察總結</h4>
+  <div class="card shadow-sm rounded-4"
+     style="background-color:#F5EFE6;border:1px solid #D6CCC2;">
+
+  <div class="card-body" style="color:#6E5C4F;">
+
+    <ul class="mb-0 ps-3">
+      <div>1. 信義核心 = 高消費 × 高租金 × 高競爭</div>
+      <div>2. 東區 = 成熟夜生活市場，進入存量競爭</div>
+      <div>3. 南京商辦 = 客源穩定但成長有限</div>
+      <div>4. 邊緣住宅混商區較有成長空間</div>
+      <div>5. 核心外圍生活圈 = 成本低 × 成長潛力高</div>
+    </ul>
+	<ul class="mt-2 ps-3">
+	<div>
+	根據空間熱點分布與公開租金、人流、市場資料綜合判斷：
+	若為新創品牌，建議選擇信義核心外圍生活圈，而非進入高度飽和的核心戰場。
+	</div>
+	</ul>
+  </div>
+  </div>
+  
+  
+  </div>
+  
+  <!-- Bootstrap JS (Bundle 含 Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

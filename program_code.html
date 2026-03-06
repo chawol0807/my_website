@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>主體程式碼說明</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="bg-dark text-white py-5">
+  <div class="container text-center">
+    <h1 class="mb-2">📊 程式碼說明</h1>
+    <p class="text-secondary mb-0">資料視覺化結果整理</p>
+  </div>
+</header>
+
+<div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h4 class="card-title">import</h4>
+      <img src="images/import.png" class="img-fluid rounded shadow-sm my-3">
+      <p class="card-text">
+        匯入所需的模組。
+      </p>
+    </div>
+</div>
+
+<div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h4 class="card-title">定義方程</h4>
+      <img src="images/def.png" class="img-fluid rounded shadow-sm my-3">
+      <p>
+        定義 google_api_search 的方程，參數放入想搜尋的關鍵詞，完成基礎參數設定。
+      </p>
+    </div>
+</div>
+
+<div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+      <h4 class="card-title">方程式內容設定</h4>
+      <img src="images/crawler.png" class="img-fluid rounded shadow-sm my-3">
+      <p>
+        設置迴圈，第一次抓取原始檔案，第二次開始加上next_page_token的元素後繼續抓取，
+		每次抓取時設定例外處理，避免沒抓到資料而中斷，
+		每抓一次資料就先處理，將資料放入results，並切割資料，
+		最後設置如果抓取的資料中未包含next_page_token的元素，
+		就break結束迴圈，並印出總共抓到幾筆資料。
+      </p>
+    </div>
+</div>
+
+<div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+	<h4 class="card-title">存取csv</h4>
+	<img src="images/csv.png" class="img-fluid rounded shadow-sm my-3">
+	<p>
+		將資料存成csv檔，並賦予每個值欄位，最後回傳資料。
+	</p>
+	</div>
+</div>
+
+<div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+	<h4 class="card-title">執行主程式</h4>
+	<img src="images/main.png" class="img-fluid rounded shadow-sm my-3">
+	<p>
+		使用定義方程式搜尋需要的資料，分別為bars跟dessert新增標籤方便之後辨別，
+		並將兩個資料合併轉為DataFrame，
+		接著處理資料，將經緯度分開並移出缺失資料。
+	</p>
+	</div>
+</div>
+
+<div class="card mb-4 shadow-sm border-0">
+    <div class="card-body">
+	<h4 class="card-title">HeatMap熱點圖設定</h4>
+	<img src="images/folium.png" class="img-fluid rounded shadow-sm my-3">
+	<p>
+		設置地圖基礎設定，並將資料轉型為熱點圖能用的資料，
+		使用迴圈遍歷資料，並創建圖標的文字內容與樣式，
+		最後存取html檔。
+	</p>
+	</div>
+</div>
+</body>
+		

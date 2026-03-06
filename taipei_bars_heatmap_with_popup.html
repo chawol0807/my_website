@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0cdb2171ea073747a58211176bf147e1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0cdb2171ea073747a58211176bf147e1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0cdb2171ea073747a58211176bf147e1 = L.map(
+                "map_0cdb2171ea073747a58211176bf147e1",
+                {
+                    center: [25.033964, 121.564468],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d176f61595637a01fc964f1c70939373 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d176f61595637a01fc964f1c70939373.addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+            var heat_map_6fe45f31914a32fed275715b9c41aa5a = L.heatLayer(
+                [[25.045944, 121.505214], [25.043701, 121.5466392], [25.049497, 121.519528], [25.069491, 121.5222548], [25.0580491, 121.5209905], [25.0410989, 121.5451579], [25.0323318, 121.556097], [25.0410494, 121.549299], [25.0545932, 121.5342349], [25.0520665, 121.5563765], [25.0285813, 121.5210553], [25.0326251, 121.5558463], [25.0521892, 121.5412848], [25.0380996, 121.5558871], [25.0130597, 121.5357184], [25.0226139, 121.5508965], [25.0528951, 121.5483193], [25.0430256, 121.5460538], [25.0400176, 121.5663109], [25.0338179, 121.5314045], [25.03222, 121.5589026], [25.0341962, 121.4524862], [25.1732441, 121.4354622], [25.0158812, 121.5312201], [25.0352052, 121.5674503], [25.0431514, 121.5067512], [25.0569807, 121.5632717], [25.0464641, 121.5072084], [25.0453663, 121.5444353], [25.0496457, 121.5653342], [25.053246, 121.5183953], [25.0546552, 121.5099947], [25.0541761, 121.5242314], [25.0267429, 121.5229122], [25.0640734, 121.5250286], [25.0417111, 121.5067799], [25.04181, 121.506205], [25.0406084, 121.5658376], [25.0509473, 121.5163732], [25.041307, 121.545908], [25.0333806, 121.5300377], [25.0451849, 121.5479715], [25.0449735, 121.5055642], [25.0307526, 121.5578593], [25.0254093, 121.5483902], [25.0931722, 121.5291967], [24.9809894, 121.5412765], [25.0320102, 121.5527687], [25.03732, 121.559624], [25.0243952, 121.5496528], [25.0491987, 121.5215731], [25.066611, 121.5233801], [25.0339868, 121.5494186], [25.00919, 121.4580312], [25.0558532, 121.5483811], [25.010697, 121.463286], [25.0496576, 121.5276047], [25.0325142, 121.5498877], [25.0544284, 121.542738], [25.0274921, 121.5556465], [25.0618921, 121.5004089], [25.0426454, 121.5520721], [25.0438917, 121.5503972], [25.0433056, 121.5069417], [25.0427124, 121.555503], [25.0319974, 121.5532512], [25.0565757, 121.5204459], [25.0395104, 121.5536058], [25.0191114, 121.5333061], [25.0761681, 121.5757446], [25.0394953, 121.5679586], [25.0139872, 121.5336346], [25.0563526, 121.5444942], [25.0465808, 121.5234064], [25.0362714, 121.5672955], [25.025515, 121.5314433], [25.0666334, 121.5232443], [25.0044513, 121.5174614], [25.0308788, 121.551371], [25.0292166, 121.5297367], [25.0296865, 121.5268411], [25.0451915, 121.507785], [25.0538298, 121.5195717], [25.0569138, 121.5208285], [25.0324567, 121.5145307], [25.0638086, 121.4916876], [25.0436721, 121.5628501], [25.024905, 121.5233196], [25.057179, 121.5605242], [25.1086323, 121.843507], [25.044309, 121.5062132], [25.0023868, 121.5150243], [25.025, 121.531374], [25.084594, 121.4615028], [25.0558677, 121.5151325], [25.0667522, 121.5408669], [25.0573749, 121.5155686], [25.0364249, 121.5555148], [25.0937644, 121.5257795], [25.0422685, 121.5091517], [25.0404056, 121.5531528], [25.0419914, 121.5631673], [24.982384, 121.564323], [25.0594137, 121.3641058], [25.0433284, 121.5634836], [25.0452898, 121.5469837], [25.0883944, 121.5257861], [25.033946, 121.5517429], [24.9948805, 121.4545126], [25.0396219, 121.567641], [24.963512, 121.3042544], [25.0867999, 121.2818143], [25.0877461, 121.5209314], [25.018977, 121.533552], [25.0425403, 121.5465802], [25.0284927, 121.5417696], [25.044503, 121.5776281], [25.0276476, 121.5419256], [24.9747396, 121.5172085], [25.0305521, 121.5541612]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 13,
+  "radius": 15,
+  "blur": 10,
+}
+            );
+        
+    
+            heat_map_6fe45f31914a32fed275715b9c41aa5a.addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+            var circle_marker_caf5de4095e24874008ac77aa22e1e90 = L.circleMarker(
+                [25.045944, 121.505214],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_ad212a472c8d655270b35e0348df6c71 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4899e4de5ce03bfb46f42fca974cbddd = $(`<div id="html_4899e4de5ce03bfb46f42fca974cbddd" style="width: 100.0%; height: 100.0%;">名稱: HANKO 60 如醉如夢<br>地址: No. 60號, Section 2, Hankou St</div>`)[0];
+                popup_ad212a472c8d655270b35e0348df6c71.setContent(html_4899e4de5ce03bfb46f42fca974cbddd);
+            
+        
+
+        circle_marker_caf5de4095e24874008ac77aa22e1e90.bindPopup(popup_ad212a472c8d655270b35e0348df6c71)
+        ;
+
+        
+    
+    
+            var circle_marker_196e66e56513c4eddc94e721c1eb373a = L.circleMarker(
+                [25.043701, 121.5466392],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_b9071679fbdfb39770074b277b92c432 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6a48ee3b97d84eb81114d66cd581a9d7 = $(`<div id="html_6a48ee3b97d84eb81114d66cd581a9d7" style="width: 100.0%; height: 100.0%;">名稱: Bar Mood Taipei<br>地址: No. 53號, Lane 160, Section 1, Dunhua S Rd</div>`)[0];
+                popup_b9071679fbdfb39770074b277b92c432.setContent(html_6a48ee3b97d84eb81114d66cd581a9d7);
+            
+        
+
+        circle_marker_196e66e56513c4eddc94e721c1eb373a.bindPopup(popup_b9071679fbdfb39770074b277b92c432)
+        ;
+
+        
+    
+    
+            var circle_marker_8c2758363d0265d4764629dba8788384 = L.circleMarker(
+                [25.049497, 121.519528],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_ffaffa6b6cd1e26abc1121326209a91a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ab14ce660917ed3bdba66714905eaab8 = $(`<div id="html_ab14ce660917ed3bdba66714905eaab8" style="width: 100.0%; height: 100.0%;">名稱: Bar Emperor<br>地址: Huayin St, 33號1樓</div>`)[0];
+                popup_ffaffa6b6cd1e26abc1121326209a91a.setContent(html_ab14ce660917ed3bdba66714905eaab8);
+            
+        
+
+        circle_marker_8c2758363d0265d4764629dba8788384.bindPopup(popup_ffaffa6b6cd1e26abc1121326209a91a)
+        ;
+
+        
+    
+    
+            var circle_marker_78ae79d4dc712b8afd39ddad68a48185 = L.circleMarker(
+                [25.069491, 121.5222548],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_6c2194771f4bef27d3d60ef94b5b846f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_94ef4627b841138c6e0c68b21c608d76 = $(`<div id="html_94ef4627b841138c6e0c68b21c608d76" style="width: 100.0%; height: 100.0%;">名稱: Tiki Taipei<br>地址: 中山區 10491台北市中山區, No. 1號, Yumen St</div>`)[0];
+                popup_6c2194771f4bef27d3d60ef94b5b846f.setContent(html_94ef4627b841138c6e0c68b21c608d76);
+            
+        
+
+        circle_marker_78ae79d4dc712b8afd39ddad68a48185.bindPopup(popup_6c2194771f4bef27d3d60ef94b5b846f)
+        ;
+
+        
+    
+    
+            var circle_marker_66fbf7bae6d9e51bcadaa0e3e2ce3ff5 = L.circleMarker(
+                [25.0580491, 121.5209905],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_0b270724a22dc6be7cc277e52daa0d2e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9c25bc2cba99e4cc6221c227a1da9e69 = $(`<div id="html_9c25bc2cba99e4cc6221c227a1da9e69" style="width: 100.0%; height: 100.0%;">名稱: 老吧 Bar Aged<br>地址: No. 3號, Alley 3, Lane 45, Minsheng W Rd</div>`)[0];
+                popup_0b270724a22dc6be7cc277e52daa0d2e.setContent(html_9c25bc2cba99e4cc6221c227a1da9e69);
+            
+        
+
+        circle_marker_66fbf7bae6d9e51bcadaa0e3e2ce3ff5.bindPopup(popup_0b270724a22dc6be7cc277e52daa0d2e)
+        ;
+
+        
+    
+    
+            var circle_marker_73d25dc967de62a205986da99bd548f9 = L.circleMarker(
+                [25.0410989, 121.5451579],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_9117c91fbd8b896b6c7f18cb06dc2d48 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c2023b0dc305467af0ffb66de61e6c77 = $(`<div id="html_c2023b0dc305467af0ffb66de61e6c77" style="width: 100.0%; height: 100.0%;">名稱: Bar Bodega<br>地址: B1, No. 34號, Lane 27, Section 4, Ren'ai Rd</div>`)[0];
+                popup_9117c91fbd8b896b6c7f18cb06dc2d48.setContent(html_c2023b0dc305467af0ffb66de61e6c77);
+            
+        
+
+        circle_marker_73d25dc967de62a205986da99bd548f9.bindPopup(popup_9117c91fbd8b896b6c7f18cb06dc2d48)
+        ;
+
+        
+    
+    
+            var circle_marker_b951df98e89a6b79062502eee231b4e0 = L.circleMarker(
+                [25.0323318, 121.556097],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_2103f9737b7e864e5843235bcaee13be = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1b7a9db5314639c6461fc7357e0aa2c8 = $(`<div id="html_1b7a9db5314639c6461fc7357e0aa2c8" style="width: 100.0%; height: 100.0%;">名稱: Sidebar<br>地址: No. 275號, Wenchang St</div>`)[0];
+                popup_2103f9737b7e864e5843235bcaee13be.setContent(html_1b7a9db5314639c6461fc7357e0aa2c8);
+            
+        
+
+        circle_marker_b951df98e89a6b79062502eee231b4e0.bindPopup(popup_2103f9737b7e864e5843235bcaee13be)
+        ;
+
+        
+    
+    
+            var circle_marker_0c7d272859ddfd3e3668c4ec607c6aa0 = L.circleMarker(
+                [25.0410494, 121.549299],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_aa9dc00da25ae0fa404232be72027b94 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_31dd5ad103373193afacf0e2d7962d54 = $(`<div id="html_31dd5ad103373193afacf0e2d7962d54" style="width: 100.0%; height: 100.0%;">名稱: Intention<br>地址: 敦化南路1段219號2樓</div>`)[0];
+                popup_aa9dc00da25ae0fa404232be72027b94.setContent(html_31dd5ad103373193afacf0e2d7962d54);
+            
+        
+
+        circle_marker_0c7d272859ddfd3e3668c4ec607c6aa0.bindPopup(popup_aa9dc00da25ae0fa404232be72027b94)
+        ;
+
+        
+    
+    
+            var circle_marker_e87c905225d7fc522b5f46369c12a069 = L.circleMarker(
+                [25.0545932, 121.5342349],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_b312e180467a261eb14ff8d51b2d0cf3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fe339e17bc541e11edc96a404fdac65e = $(`<div id="html_fe339e17bc541e11edc96a404fdac65e" style="width: 100.0%; height: 100.0%;">名稱: PG Bar<br>地址: No. 176, Changchun Rd</div>`)[0];
+                popup_b312e180467a261eb14ff8d51b2d0cf3.setContent(html_fe339e17bc541e11edc96a404fdac65e);
+            
+        
+
+        circle_marker_e87c905225d7fc522b5f46369c12a069.bindPopup(popup_b312e180467a261eb14ff8d51b2d0cf3)
+        ;
+
+        
+    
+    
+            var circle_marker_e47b11f269da2df1ab3d33ff71401f7a = L.circleMarker(
+                [25.0520665, 121.5563765],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_e537e3ca53988dee86c8a5946a58bf60 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_aa9ee7b3412f73df3abbd83c154d540c = $(`<div id="html_aa9ee7b3412f73df3abbd83c154d540c" style="width: 100.0%; height: 100.0%;">名稱: OriginBAR 源<br>地址: No. 31號, Alley 5, Lane 133, Section 4, Nanjing E Rd</div>`)[0];
+                popup_e537e3ca53988dee86c8a5946a58bf60.setContent(html_aa9ee7b3412f73df3abbd83c154d540c);
+            
+        
+
+        circle_marker_e47b11f269da2df1ab3d33ff71401f7a.bindPopup(popup_e537e3ca53988dee86c8a5946a58bf60)
+        ;
+
+        
+    
+    
+            var circle_marker_beef4cde44d69aaf6cd739703b58c856 = L.circleMarker(
+                [25.0285813, 121.5210553],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_a662e6147684403658232501f7e7f5d1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2fdfda903d5e706af5bbc3149c48803e = $(`<div id="html_2fdfda903d5e706af5bbc3149c48803e" style="width: 100.0%; height: 100.0%;">名稱: Bar M<br>地址: No. 20號, Section 2, Roosevelt Rd</div>`)[0];
+                popup_a662e6147684403658232501f7e7f5d1.setContent(html_2fdfda903d5e706af5bbc3149c48803e);
+            
+        
+
+        circle_marker_beef4cde44d69aaf6cd739703b58c856.bindPopup(popup_a662e6147684403658232501f7e7f5d1)
+        ;
+
+        
+    
+    
+            var circle_marker_274c5e99e494571fbc656338fca28710 = L.circleMarker(
+                [25.0326251, 121.5558463],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_1a0141a7ea0e74921bfca2420e6db461 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2c70b248bf1420d400fcff1f191c8c46 = $(`<div id="html_2c70b248bf1420d400fcff1f191c8c46" style="width: 100.0%; height: 100.0%;">名稱: PUN<br>地址: Lane 378, Section 4, Xinyi Rd, 5號1樓</div>`)[0];
+                popup_1a0141a7ea0e74921bfca2420e6db461.setContent(html_2c70b248bf1420d400fcff1f191c8c46);
+            
+        
+
+        circle_marker_274c5e99e494571fbc656338fca28710.bindPopup(popup_1a0141a7ea0e74921bfca2420e6db461)
+        ;
+
+        
+    
+    
+            var circle_marker_e0dad548876a5b6e5f8ed48a6301f750 = L.circleMarker(
+                [25.0521892, 121.5412848],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_095a65ef0019aa5f7d530995706c435b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a62e7f309fe6ed1f9bf00e485c65bd68 = $(`<div id="html_a62e7f309fe6ed1f9bf00e485c65bd68" style="width: 100.0%; height: 100.0%;">名稱: JR東日本大飯店台北-THE BAR酒吧<br>地址: No. 133號, Section 3, Nanjing E Rd</div>`)[0];
+                popup_095a65ef0019aa5f7d530995706c435b.setContent(html_a62e7f309fe6ed1f9bf00e485c65bd68);
+            
+        
+
+        circle_marker_e0dad548876a5b6e5f8ed48a6301f750.bindPopup(popup_095a65ef0019aa5f7d530995706c435b)
+        ;
+
+        
+    
+    
+            var circle_marker_eaf6ddb3d1bf4b1324ad8c77db908f01 = L.circleMarker(
+                [25.0380996, 121.5558871],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_9defc9df641c47b4091ab005322eace8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6553969c650d1bd39160618a67abd6f6 = $(`<div id="html_6553969c650d1bd39160618a67abd6f6" style="width: 100.0%; height: 100.0%;">名稱: Lab<br>地址: No. 409號, Section 4, Ren'ai Rd</div>`)[0];
+                popup_9defc9df641c47b4091ab005322eace8.setContent(html_6553969c650d1bd39160618a67abd6f6);
+            
+        
+
+        circle_marker_eaf6ddb3d1bf4b1324ad8c77db908f01.bindPopup(popup_9defc9df641c47b4091ab005322eace8)
+        ;
+
+        
+    
+    
+            var circle_marker_552df885b5da93dca41a872043da5443 = L.circleMarker(
+                [25.0130597, 121.5357184],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_ed38e10677901d88f17b3977b95d8681 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e20c57478814686838e80bd44df7d54f = $(`<div id="html_e20c57478814686838e80bd44df7d54f" style="width: 100.0%; height: 100.0%;">名稱: Bittersweet Bar<br>地址: 一樓, No. 128號, Section 4, Roosevelt Rd</div>`)[0];
+                popup_ed38e10677901d88f17b3977b95d8681.setContent(html_e20c57478814686838e80bd44df7d54f);
+            
+        
+
+        circle_marker_552df885b5da93dca41a872043da5443.bindPopup(popup_ed38e10677901d88f17b3977b95d8681)
+        ;
+
+        
+    
+    
+            var circle_marker_b8f99646fe80410e9f8b3961f95cc718 = L.circleMarker(
+                [25.0226139, 121.5508965],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_e760ab0542c92af478afc4d14d0830bf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_439ae742dcc9bd63bcc8f5149d3990c3 = $(`<div id="html_439ae742dcc9bd63bcc8f5149d3990c3" style="width: 100.0%; height: 100.0%;">名稱: Bar two<br>地址: No. 229號, Section 2, Keelung Rd</div>`)[0];
+                popup_e760ab0542c92af478afc4d14d0830bf.setContent(html_439ae742dcc9bd63bcc8f5149d3990c3);
+            
+        
+
+        circle_marker_b8f99646fe80410e9f8b3961f95cc718.bindPopup(popup_e760ab0542c92af478afc4d14d0830bf)
+        ;
+
+        
+    
+    
+            var circle_marker_3ea99987a6806ebebfd32c24d88d028c = L.circleMarker(
+                [25.0528951, 121.5483193],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_de78ed07cc54ab3d773d1d1b320aae77 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_24fd9142355ec57add7fdf00c8766ebb = $(`<div id="html_24fd9142355ec57add7fdf00c8766ebb" style="width: 100.0%; height: 100.0%;">名稱: Opera Cocktail Bar<br>地址: DunHua N Rd, 100號15 樓</div>`)[0];
+                popup_de78ed07cc54ab3d773d1d1b320aae77.setContent(html_24fd9142355ec57add7fdf00c8766ebb);
+            
+        
+
+        circle_marker_3ea99987a6806ebebfd32c24d88d028c.bindPopup(popup_de78ed07cc54ab3d773d1d1b320aae77)
+        ;
+
+        
+    
+    
+            var circle_marker_28a66993c1b8dbcb2de381d632cb60a0 = L.circleMarker(
+                [25.0430256, 121.5460538],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_e2b667a00c4b83b1046f16d652e6beed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_02b6bb4ff3bd38576f91cb92eff8c34a = $(`<div id="html_02b6bb4ff3bd38576f91cb92eff8c34a" style="width: 100.0%; height: 100.0%;">名稱: EAST END<br>地址: Section 1, Da'an Rd, 56號3F</div>`)[0];
+                popup_e2b667a00c4b83b1046f16d652e6beed.setContent(html_02b6bb4ff3bd38576f91cb92eff8c34a);
+            
+        
+
+        circle_marker_28a66993c1b8dbcb2de381d632cb60a0.bindPopup(popup_e2b667a00c4b83b1046f16d652e6beed)
+        ;
+
+        
+    
+    
+            var circle_marker_a775208d915b82cb7c69e375bbf0090b = L.circleMarker(
+                [25.0400176, 121.5663109],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_785b05bf48ecba378de597d123cb92e0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b59491461dd3a213c16276992631cf07 = $(`<div id="html_b59491461dd3a213c16276992631cf07" style="width: 100.0%; height: 100.0%;">名稱: Draft Land Xinyi<br>地址: Songgao Rd, 19號1樓</div>`)[0];
+                popup_785b05bf48ecba378de597d123cb92e0.setContent(html_b59491461dd3a213c16276992631cf07);
+            
+        
+
+        circle_marker_a775208d915b82cb7c69e375bbf0090b.bindPopup(popup_785b05bf48ecba378de597d123cb92e0)
+        ;
+
+        
+    
+    
+            var circle_marker_0543ffafecc5712267cda45402b6e30c = L.circleMarker(
+                [25.0338179, 121.5314045],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_08b4c319440d7927d950e8bb487e26c3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e7e54c2282d613f09e3bd443086705b3 = $(`<div id="html_e7e54c2282d613f09e3bd443086705b3" style="width: 100.0%; height: 100.0%;">名稱: Learn Bar 學吧精釀<br>地址: Section 2, Xinyi Rd, 253號1樓</div>`)[0];
+                popup_08b4c319440d7927d950e8bb487e26c3.setContent(html_e7e54c2282d613f09e3bd443086705b3);
+            
+        
+
+        circle_marker_0543ffafecc5712267cda45402b6e30c.bindPopup(popup_08b4c319440d7927d950e8bb487e26c3)
+        ;
+
+        
+    
+    
+            var circle_marker_a118590dc3643ecc4f3d07736f462a25 = L.circleMarker(
+                [25.03222, 121.5589026],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_400e58e23181d230d69d6ac40be49ef2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2f82fe0fa5519f5e987f703498755097 = $(`<div id="html_2f82fe0fa5519f5e987f703498755097" style="width: 100.0%; height: 100.0%;">名稱: 榕 RON Xinyi<br>地址: No. 12號, Section 2, Keelung Rd</div>`)[0];
+                popup_400e58e23181d230d69d6ac40be49ef2.setContent(html_2f82fe0fa5519f5e987f703498755097);
+            
+        
+
+        circle_marker_a118590dc3643ecc4f3d07736f462a25.bindPopup(popup_400e58e23181d230d69d6ac40be49ef2)
+        ;
+
+        
+    
+    
+            var circle_marker_13a470d35a616340c2c116319ac18670 = L.circleMarker(
+                [25.0341962, 121.4524862],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_207e78a9b87e1e456892febe165dcc43 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9ea98997a32104f1c316d5ea64e36468 = $(`<div id="html_9ea98997a32104f1c316d5ea64e36468" style="width: 100.0%; height: 100.0%;">名稱: 日蝕餐酒Eclipse Bistro and Bar－新北新莊餐酒館｜特色調酒｜約會酒吧推薦｜美食宵夜｜捷運新莊站附近<br>地址: Xinzhuang Rd, 236號1樓</div>`)[0];
+                popup_207e78a9b87e1e456892febe165dcc43.setContent(html_9ea98997a32104f1c316d5ea64e36468);
+            
+        
+
+        circle_marker_13a470d35a616340c2c116319ac18670.bindPopup(popup_207e78a9b87e1e456892febe165dcc43)
+        ;
+
+        
+    
+    
+            var circle_marker_66cabd1148c1dbaac5e5cdd2ade215ef = L.circleMarker(
+                [25.1732441, 121.4354622],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_652d030845e1b869ab05c2a050dd9a02 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ba7ad220ce9374e8188fd9c520671e38 = $(`<div id="html_ba7ad220ce9374e8188fd9c520671e38" style="width: 100.0%; height: 100.0%;">名稱: Prost BAR<br>地址: No. 233-2, Zhongzheng Rd</div>`)[0];
+                popup_652d030845e1b869ab05c2a050dd9a02.setContent(html_ba7ad220ce9374e8188fd9c520671e38);
+            
+        
+
+        circle_marker_66cabd1148c1dbaac5e5cdd2ade215ef.bindPopup(popup_652d030845e1b869ab05c2a050dd9a02)
+        ;
+
+        
+    
+    
+            var circle_marker_e3a7318706ff4d178d63151f1eae1c38 = L.circleMarker(
+                [25.0158812, 121.5312201],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_fe908a3f6b17fec96fb76b09c54f1ea2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_544b2041c7fe645cfc17cd4b787646b6 = $(`<div id="html_544b2041c7fe645cfc17cd4b787646b6" style="width: 100.0%; height: 100.0%;">名稱: BAR FEST<br>地址: Section 3, Tingzhou Rd, 149號1樓</div>`)[0];
+                popup_fe908a3f6b17fec96fb76b09c54f1ea2.setContent(html_544b2041c7fe645cfc17cd4b787646b6);
+            
+        
+
+        circle_marker_e3a7318706ff4d178d63151f1eae1c38.bindPopup(popup_fe908a3f6b17fec96fb76b09c54f1ea2)
+        ;
+
+        
+    
+    
+            var circle_marker_3b4dcae4fabe5861e11a185713772b73 = L.circleMarker(
+                [25.0352052, 121.5674503],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_67df8b699d4538852edd60cf3bac5351 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9f73e3d8d5b3d8de2a2d3574d75fb974 = $(`<div id="html_9f73e3d8d5b3d8de2a2d3574d75fb974" style="width: 100.0%; height: 100.0%;">名稱: Fake Sober Taipei<br>地址: No. 20號, Songshou Rd</div>`)[0];
+                popup_67df8b699d4538852edd60cf3bac5351.setContent(html_9f73e3d8d5b3d8de2a2d3574d75fb974);
+            
+        
+
+        circle_marker_3b4dcae4fabe5861e11a185713772b73.bindPopup(popup_67df8b699d4538852edd60cf3bac5351)
+        ;
+
+        
+    
+    
+            var circle_marker_0f82f59defe96e7fdf7353b127ad3300 = L.circleMarker(
+                [25.0431514, 121.5067512],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_3ea19db24d3a4e3a75ea1c65752f84cd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_85ee5ebb65471bf28e9e8e0ef2d3776a = $(`<div id="html_85ee5ebb65471bf28e9e8e0ef2d3776a" style="width: 100.0%; height: 100.0%;">名稱: Chance Cafe & Bar - Chengdu Branch<br>地址: No. 10號, Lane 27, Chengdu Rd</div>`)[0];
+                popup_3ea19db24d3a4e3a75ea1c65752f84cd.setContent(html_85ee5ebb65471bf28e9e8e0ef2d3776a);
+            
+        
+
+        circle_marker_0f82f59defe96e7fdf7353b127ad3300.bindPopup(popup_3ea19db24d3a4e3a75ea1c65752f84cd)
+        ;
+
+        
+    
+    
+            var circle_marker_908ee96640dd66189bd3d8f3a28d75b5 = L.circleMarker(
+                [25.0569807, 121.5632717],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_ca530ebf448a4695325d6868e1e65f9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_135bf81c42cb9566ffe00ef83ac3e395 = $(`<div id="html_135bf81c42cb9566ffe00ef83ac3e395" style="width: 100.0%; height: 100.0%;">名稱: You & Me Beef Noodle Bar<br>地址: No. 145號, Yanshou St</div>`)[0];
+                popup_ca530ebf448a4695325d6868e1e65f9e.setContent(html_135bf81c42cb9566ffe00ef83ac3e395);
+            
+        
+
+        circle_marker_908ee96640dd66189bd3d8f3a28d75b5.bindPopup(popup_ca530ebf448a4695325d6868e1e65f9e)
+        ;
+
+        
+    
+    
+            var circle_marker_050e6a80e354e88003db4709e05602bc = L.circleMarker(
+                [25.0464641, 121.5072084],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_9e7771350766c552ea3957ea08b2c4d2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f1c095ef9b5c8198cde79cf9d3474bf4 = $(`<div id="html_f1c095ef9b5c8198cde79cf9d3474bf4" style="width: 100.0%; height: 100.0%;">名稱: Taiwan Craft beer house &The 58 Bar西門精釀餐酒館<br>地址: No. 58號, Section 2, Kaifeng St</div>`)[0];
+                popup_9e7771350766c552ea3957ea08b2c4d2.setContent(html_f1c095ef9b5c8198cde79cf9d3474bf4);
+            
+        
+
+        circle_marker_050e6a80e354e88003db4709e05602bc.bindPopup(popup_9e7771350766c552ea3957ea08b2c4d2)
+        ;
+
+        
+    
+    
+            var circle_marker_d1e166c9939f0290640a29c2811f12d8 = L.circleMarker(
+                [25.0453663, 121.5444353],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_8a4063ef3b33d373b4fae23e9e4c5c4c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5d93cf1bc950c6122606c5f436ccd462 = $(`<div id="html_5d93cf1bc950c6122606c5f436ccd462" style="width: 100.0%; height: 100.0%;">名稱: Gato Luna Cafe’ Bar -茶酒｜特色酒吧｜ Live表演｜平價｜咖哩｜聚餐推薦dcard｜台北東區｜忠孝復興站｜市民大道<br>地址: 復興南路7號</div>`)[0];
+                popup_8a4063ef3b33d373b4fae23e9e4c5c4c.setContent(html_5d93cf1bc950c6122606c5f436ccd462);
+            
+        
+
+        circle_marker_d1e166c9939f0290640a29c2811f12d8.bindPopup(popup_8a4063ef3b33d373b4fae23e9e4c5c4c)
+        ;
+
+        
+    
+    
+            var circle_marker_694481c992495af47a3b5f187de2f8ce = L.circleMarker(
+                [25.0496457, 121.5653342],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_c35da753011fc50640d0173ed9a968d5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f401c394b17c6da235648e2a66341bec = $(`<div id="html_f401c394b17c6da235648e2a66341bec" style="width: 100.0%; height: 100.0%;">名稱: Healer Bar<br>地址: No. 12號, Dongxing Rd</div>`)[0];
+                popup_c35da753011fc50640d0173ed9a968d5.setContent(html_f401c394b17c6da235648e2a66341bec);
+            
+        
+
+        circle_marker_694481c992495af47a3b5f187de2f8ce.bindPopup(popup_c35da753011fc50640d0173ed9a968d5)
+        ;
+
+        
+    
+    
+            var circle_marker_00ec75476aad62daade31df11da4407c = L.circleMarker(
+                [25.053246, 121.5183953],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_67500fea6205a0d430df5b7dbe1fce50 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4b92d4038b80f68ef48a4bacb2eb40b3 = $(`<div id="html_4b92d4038b80f68ef48a4bacb2eb40b3" style="width: 100.0%; height: 100.0%;">名稱: INTOX-爵士雞尾酒酒吧-Live Jazz & Cocktail Bar-<br>地址: No. 85號, Nanjing W Rd</div>`)[0];
+                popup_67500fea6205a0d430df5b7dbe1fce50.setContent(html_4b92d4038b80f68ef48a4bacb2eb40b3);
+            
+        
+
+        circle_marker_00ec75476aad62daade31df11da4407c.bindPopup(popup_67500fea6205a0d430df5b7dbe1fce50)
+        ;
+
+        
+    
+    
+            var circle_marker_59730023c815385a0dd62bb14db33121 = L.circleMarker(
+                [25.0546552, 121.5099947],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_f8d7280977aead7e63a2daec23015a21 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_36b15a1eaa225f109afb4dee5ddb1c6f = $(`<div id="html_36b15a1eaa225f109afb4dee5ddb1c6f" style="width: 100.0%; height: 100.0%;">名稱: Antique Bar 1900<br>地址: Section 1, Dihua St, 34號3樓</div>`)[0];
+                popup_f8d7280977aead7e63a2daec23015a21.setContent(html_36b15a1eaa225f109afb4dee5ddb1c6f);
+            
+        
+
+        circle_marker_59730023c815385a0dd62bb14db33121.bindPopup(popup_f8d7280977aead7e63a2daec23015a21)
+        ;
+
+        
+    
+    
+            var circle_marker_56e18558ecd7bc427d0870134bc1621f = L.circleMarker(
+                [25.0541761, 121.5242314],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_b297f895fcdae42157844f4f4daa8a58 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e6ab436965c75c981137ef77822dc6d4 = $(`<div id="html_e6ab436965c75c981137ef77822dc6d4" style="width: 100.0%; height: 100.0%;">名稱: Bar Impromptu<br>地址: B1, 麗晶精品, 入口下來左邊第二間, 林森北路, No. 3號, Lane 39, Section 2, Zhongshan N Rd</div>`)[0];
+                popup_b297f895fcdae42157844f4f4daa8a58.setContent(html_e6ab436965c75c981137ef77822dc6d4);
+            
+        
+
+        circle_marker_56e18558ecd7bc427d0870134bc1621f.bindPopup(popup_b297f895fcdae42157844f4f4daa8a58)
+        ;
+
+        
+    
+    
+            var circle_marker_ca1889aa20e519202ecb2fa18f550f4d = L.circleMarker(
+                [25.0267429, 121.5229122],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_f4dce09df2b90ca8462d9c881b792989 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c261cfc6928971340149479f472d9106 = $(`<div id="html_c261cfc6928971340149479f472d9106" style="width: 100.0%; height: 100.0%;">名稱: ocean Taipei Bar<br>地址: Section 2, Roosevelt Rd, 67號地下一樓</div>`)[0];
+                popup_f4dce09df2b90ca8462d9c881b792989.setContent(html_c261cfc6928971340149479f472d9106);
+            
+        
+
+        circle_marker_ca1889aa20e519202ecb2fa18f550f4d.bindPopup(popup_f4dce09df2b90ca8462d9c881b792989)
+        ;
+
+        
+    
+    
+            var circle_marker_c82122600ebf5fc39af0f3522f977d0d = L.circleMarker(
+                [25.0640734, 121.5250286],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_3c1dea41f4cda54ff911c236025a325d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6c1bfd057e5edcaeb1b1fd80dc9440cc = $(`<div id="html_6c1bfd057e5edcaeb1b1fd80dc9440cc" style="width: 100.0%; height: 100.0%;">名稱: Bar ansleep<br>地址: No, No. 20-1號, Lane 13, Shuangcheng St</div>`)[0];
+                popup_3c1dea41f4cda54ff911c236025a325d.setContent(html_6c1bfd057e5edcaeb1b1fd80dc9440cc);
+            
+        
+
+        circle_marker_c82122600ebf5fc39af0f3522f977d0d.bindPopup(popup_3c1dea41f4cda54ff911c236025a325d)
+        ;
+
+        
+    
+    
+            var circle_marker_9c92486670439bd1526b29d5876b775a = L.circleMarker(
+                [25.0417111, 121.5067799],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_026386122cf99f8bd6497f4a9de43e9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ff6fe2505c06a5b8d369253059979f87 = $(`<div id="html_ff6fe2505c06a5b8d369253059979f87" style="width: 100.0%; height: 100.0%;">名稱: The Garden<br>地址: No. 33號, Lane 10, Chengdu Rd</div>`)[0];
+                popup_026386122cf99f8bd6497f4a9de43e9e.setContent(html_ff6fe2505c06a5b8d369253059979f87);
+            
+        
+
+        circle_marker_9c92486670439bd1526b29d5876b775a.bindPopup(popup_026386122cf99f8bd6497f4a9de43e9e)
+        ;
+
+        
+    
+    
+            var circle_marker_3b4a6c2390c8af161fd37a73633f90c0 = L.circleMarker(
+                [25.04181, 121.506205],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_16ab20c283114c8ef863005bf6674c9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_958b22edfae725264fe162141f8c79ea = $(`<div id="html_958b22edfae725264fe162141f8c79ea" style="width: 100.0%; height: 100.0%;">名稱: Casa Bar<br>地址: No. 57號, Lane 10, Chengdu Rd</div>`)[0];
+                popup_16ab20c283114c8ef863005bf6674c9e.setContent(html_958b22edfae725264fe162141f8c79ea);
+            
+        
+
+        circle_marker_3b4a6c2390c8af161fd37a73633f90c0.bindPopup(popup_16ab20c283114c8ef863005bf6674c9e)
+        ;
+
+        
+    
+    
+            var circle_marker_0440717c7783333f16c2a59ecef9d644 = L.circleMarker(
+                [25.0406084, 121.5658376],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_3407898d8140c3f55d56b0b05cfde025 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c39c1d9cfac51eaea9039ba7f5ec966b = $(`<div id="html_c39c1d9cfac51eaea9039ba7f5ec966b" style="width: 100.0%; height: 100.0%;">名稱: WOOBAR<br>地址: Section 5 of Zhongxiao East RoadSection 5 of Zhongxiao E Rd, 10號10樓</div>`)[0];
+                popup_3407898d8140c3f55d56b0b05cfde025.setContent(html_c39c1d9cfac51eaea9039ba7f5ec966b);
+            
+        
+
+        circle_marker_0440717c7783333f16c2a59ecef9d644.bindPopup(popup_3407898d8140c3f55d56b0b05cfde025)
+        ;
+
+        
+    
+    
+            var circle_marker_15f5be1db99392366e8ae374bf445c74 = L.circleMarker(
+                [25.0509473, 121.5163732],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_38b60cd1300cfb0d8e9390361779d7ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e5f41c042d780c839c32fe13caadc951 = $(`<div id="html_e5f41c042d780c839c32fe13caadc951" style="width: 100.0%; height: 100.0%;">名稱: 獨角落Do Bar（北車店）<br>地址: Chang'an W Rd, 162號1F</div>`)[0];
+                popup_38b60cd1300cfb0d8e9390361779d7ed.setContent(html_e5f41c042d780c839c32fe13caadc951);
+            
+        
+
+        circle_marker_15f5be1db99392366e8ae374bf445c74.bindPopup(popup_38b60cd1300cfb0d8e9390361779d7ed)
+        ;
+
+        
+    
+    
+            var circle_marker_2f82d5f231eb4b908ad6b6ade0799b96 = L.circleMarker(
+                [25.041307, 121.545908],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_abe1f7e83d0d31976c9d41daf3b1ee6a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1f2d4b2bab4a4d3cfd8b1728e1d59bd9 = $(`<div id="html_1f2d4b2bab4a4d3cfd8b1728e1d59bd9" style="width: 100.0%; height: 100.0%;">名稱: MADE Taipei<br>地址: Section 4, Zhongxiao E Rd, 94號2樓</div>`)[0];
+                popup_abe1f7e83d0d31976c9d41daf3b1ee6a.setContent(html_1f2d4b2bab4a4d3cfd8b1728e1d59bd9);
+            
+        
+
+        circle_marker_2f82d5f231eb4b908ad6b6ade0799b96.bindPopup(popup_abe1f7e83d0d31976c9d41daf3b1ee6a)
+        ;
+
+        
+    
+    
+            var circle_marker_2c9681e3c67a5a49e8f3a6e276f11ea5 = L.circleMarker(
+                [25.0333806, 121.5300377],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_edd4fa900aeaff500fd4921bb55269a4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7f623ebe922907ee1eaadc625cc55649 = $(`<div id="html_7f623ebe922907ee1eaadc625cc55649" style="width: 100.0%; height: 100.0%;">名稱: Ounce Taipei<br>地址: Section 2, Xinyi Rd, 190號二樓 2F</div>`)[0];
+                popup_edd4fa900aeaff500fd4921bb55269a4.setContent(html_7f623ebe922907ee1eaadc625cc55649);
+            
+        
+
+        circle_marker_2c9681e3c67a5a49e8f3a6e276f11ea5.bindPopup(popup_edd4fa900aeaff500fd4921bb55269a4)
+        ;
+
+        
+    
+    
+            var circle_marker_85f5cdedc915a39c25d629b43d6cf1d1 = L.circleMarker(
+                [25.0451849, 121.5479715],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_cd6ddf04fd2e8fcedcfc9433717ef69c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_69492642ad08827ffb7ff61a7b0415dd = $(`<div id="html_69492642ad08827ffb7ff61a7b0415dd" style="width: 100.0%; height: 100.0%;">名稱: 傷心酒店HEARTBREAK CLUB<br>地址: No. 103號, Section 4, Civic Blvd</div>`)[0];
+                popup_cd6ddf04fd2e8fcedcfc9433717ef69c.setContent(html_69492642ad08827ffb7ff61a7b0415dd);
+            
+        
+
+        circle_marker_85f5cdedc915a39c25d629b43d6cf1d1.bindPopup(popup_cd6ddf04fd2e8fcedcfc9433717ef69c)
+        ;
+
+        
+    
+    
+            var circle_marker_9c7de794d12a61ab04fa44425326f1ab = L.circleMarker(
+                [25.0449735, 121.5055642],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_a7cbcada3af46ea51b67c3fbfe776a5b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ee1b0b5fd8959b1a10b6c215e90d0cf6 = $(`<div id="html_ee1b0b5fd8959b1a10b6c215e90d0cf6" style="width: 100.0%; height: 100.0%;">名稱: Nonsense Cafe & Bar - Wuchang Branch<br>地址: Section 2, Wuchang St, 100號2樓</div>`)[0];
+                popup_a7cbcada3af46ea51b67c3fbfe776a5b.setContent(html_ee1b0b5fd8959b1a10b6c215e90d0cf6);
+            
+        
+
+        circle_marker_9c7de794d12a61ab04fa44425326f1ab.bindPopup(popup_a7cbcada3af46ea51b67c3fbfe776a5b)
+        ;
+
+        
+    
+    
+            var circle_marker_cab3d306d322ac5f2a4f363cd0083297 = L.circleMarker(
+                [25.0307526, 121.5578593],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_5ad78e8ec710b633a3673a88e9e3f03b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b4f9371eebfa7a65cd08f0c552f10dd = $(`<div id="html_8b4f9371eebfa7a65cd08f0c552f10dd" style="width: 100.0%; height: 100.0%;">名稱: Weekend Chicken Club & Bar<br>地址: No. 74號, Section 2, Keelung Rd</div>`)[0];
+                popup_5ad78e8ec710b633a3673a88e9e3f03b.setContent(html_8b4f9371eebfa7a65cd08f0c552f10dd);
+            
+        
+
+        circle_marker_cab3d306d322ac5f2a4f363cd0083297.bindPopup(popup_5ad78e8ec710b633a3673a88e9e3f03b)
+        ;
+
+        
+    
+    
+            var circle_marker_6a98abc2c4c1f2af888f0154ffbf57f4 = L.circleMarker(
+                [25.0254093, 121.5483902],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_337458e3d61ea20924a1d60b70129253 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5fce9110a92c748a78e7bf6b7c5bfa21 = $(`<div id="html_5fce9110a92c748a78e7bf6b7c5bfa21" style="width: 100.0%; height: 100.0%;">名稱: Unwined Bar & Vintner<br>地址: No. 148, Section 2, Dunhua S Rd</div>`)[0];
+                popup_337458e3d61ea20924a1d60b70129253.setContent(html_5fce9110a92c748a78e7bf6b7c5bfa21);
+            
+        
+
+        circle_marker_6a98abc2c4c1f2af888f0154ffbf57f4.bindPopup(popup_337458e3d61ea20924a1d60b70129253)
+        ;
+
+        
+    
+    
+            var circle_marker_48903d25107b8a4d40ca6d55c1ef48f8 = L.circleMarker(
+                [25.0931722, 121.5291967],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_07e4d652ed5a7065192dc7e65ee536df = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4bce050f8ba2d873414f55be6a7b6fc7 = $(`<div id="html_4bce050f8ba2d873414f55be6a7b6fc7" style="width: 100.0%; height: 100.0%;">名稱: R BAR<br>地址: Lane 470, Section 5, Zhongshan N Rd, 8號1樓</div>`)[0];
+                popup_07e4d652ed5a7065192dc7e65ee536df.setContent(html_4bce050f8ba2d873414f55be6a7b6fc7);
+            
+        
+
+        circle_marker_48903d25107b8a4d40ca6d55c1ef48f8.bindPopup(popup_07e4d652ed5a7065192dc7e65ee536df)
+        ;
+
+        
+    
+    
+            var circle_marker_4065bb1b214416e8224b5151a3a6d8dd = L.circleMarker(
+                [24.9809894, 121.5412765],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_9a1cc0fbfe799c7d946a532e1c256141 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2dbcb92cb44398ab18f798c1ce7415d0 = $(`<div id="html_2dbcb92cb44398ab18f798c1ce7415d0" style="width: 100.0%; height: 100.0%;">名稱: H&W Restaurant and Bar<br>地址: No. 5號, Lane 65, Section 3, Beixin Rd</div>`)[0];
+                popup_9a1cc0fbfe799c7d946a532e1c256141.setContent(html_2dbcb92cb44398ab18f798c1ce7415d0);
+            
+        
+
+        circle_marker_4065bb1b214416e8224b5151a3a6d8dd.bindPopup(popup_9a1cc0fbfe799c7d946a532e1c256141)
+        ;
+
+        
+    
+    
+            var circle_marker_369bce56b5b3e822d68ea65b35062334 = L.circleMarker(
+                [25.0320102, 121.5527687],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_0cfd1fa279cbd4d93b0b6f69c6fd5695 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_75502546211ab5cb92d5279b65d705f1 = $(`<div id="html_75502546211ab5cb92d5279b65d705f1" style="width: 100.0%; height: 100.0%;">名稱: Shaka Lounge Bar<br>地址: No. 2號, Lane 23, Section 2, Anhe Rd</div>`)[0];
+                popup_0cfd1fa279cbd4d93b0b6f69c6fd5695.setContent(html_75502546211ab5cb92d5279b65d705f1);
+            
+        
+
+        circle_marker_369bce56b5b3e822d68ea65b35062334.bindPopup(popup_0cfd1fa279cbd4d93b0b6f69c6fd5695)
+        ;
+
+        
+    
+    
+            var circle_marker_732b4d52fa2ec27902e17e13a85aae4b = L.circleMarker(
+                [25.03732, 121.559624],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_d3b396403f60192287cffca509e52b98 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_096bca69ee085346eb7597d0848429a3 = $(`<div id="html_096bca69ee085346eb7597d0848429a3" style="width: 100.0%; height: 100.0%;">名稱: 四月餐廳酒吧 Fuzzy April Restaurant & Bar<br>地址: Section 4, Ren'ai Rd, 462號1樓</div>`)[0];
+                popup_d3b396403f60192287cffca509e52b98.setContent(html_096bca69ee085346eb7597d0848429a3);
+            
+        
+
+        circle_marker_732b4d52fa2ec27902e17e13a85aae4b.bindPopup(popup_d3b396403f60192287cffca509e52b98)
+        ;
+
+        
+    
+    
+            var circle_marker_7d16101acfec332aacf565949ae02c7d = L.circleMarker(
+                [25.0243952, 121.5496528],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_f1a3cb8f26bf7fe6997c0d22cf821e00 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fa9ff2bf37656fb2cc68a1e65c0af4dd = $(`<div id="html_fa9ff2bf37656fb2cc68a1e65c0af4dd" style="width: 100.0%; height: 100.0%;">名稱: TEA BAR<br>地址: 和平東路三段66號1樓</div>`)[0];
+                popup_f1a3cb8f26bf7fe6997c0d22cf821e00.setContent(html_fa9ff2bf37656fb2cc68a1e65c0af4dd);
+            
+        
+
+        circle_marker_7d16101acfec332aacf565949ae02c7d.bindPopup(popup_f1a3cb8f26bf7fe6997c0d22cf821e00)
+        ;
+
+        
+    
+    
+            var circle_marker_a9f322fe57d858cf44ca5a633efac710 = L.circleMarker(
+                [25.0491987, 121.5215731],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_668811f2a0c25078e123acd86a8b93e0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8a7f7de2faa2d31a42b8556a8afc097b = $(`<div id="html_8a7f7de2faa2d31a42b8556a8afc097b" style="width: 100.0%; height: 100.0%;">名稱: SoShow Bar & Restaurant<br>地址: 2f, No. 47號, Section 1, Zhongshan N Rd</div>`)[0];
+                popup_668811f2a0c25078e123acd86a8b93e0.setContent(html_8a7f7de2faa2d31a42b8556a8afc097b);
+            
+        
+
+        circle_marker_a9f322fe57d858cf44ca5a633efac710.bindPopup(popup_668811f2a0c25078e123acd86a8b93e0)
+        ;
+
+        
+    
+    
+            var circle_marker_6ca8452b1ff8be5fe0d90a00978d906e = L.circleMarker(
+                [25.066611, 121.5233801],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_7f5a744934d13774064b0e450b76d4a4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_77e263112b699fa6f3f6ece5a6c77806 = $(`<div id="html_77e263112b699fa6f3f6ece5a6c77806" style="width: 100.0%; height: 100.0%;">名稱: Green Door Bar 綠門 老酒吧<br>地址: Dehui St, 6-1號號1樓</div>`)[0];
+                popup_7f5a744934d13774064b0e450b76d4a4.setContent(html_77e263112b699fa6f3f6ece5a6c77806);
+            
+        
+
+        circle_marker_6ca8452b1ff8be5fe0d90a00978d906e.bindPopup(popup_7f5a744934d13774064b0e450b76d4a4)
+        ;
+
+        
+    
+    
+            var circle_marker_a40603285c6dc358888defa17357067a = L.circleMarker(
+                [25.0339868, 121.5494186],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_6b322cd213a9d3e02c505515595ca015 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9a7c38ff94826dfa2d813ef0107c6c56 = $(`<div id="html_9a7c38ff94826dfa2d813ef0107c6c56" style="width: 100.0%; height: 100.0%;">名稱: URBAN331 BAR (慕軒飯店 MADISON TAIPEI HOTEL)<br>地址: 敦化南路1段331號</div>`)[0];
+                popup_6b322cd213a9d3e02c505515595ca015.setContent(html_9a7c38ff94826dfa2d813ef0107c6c56);
+            
+        
+
+        circle_marker_a40603285c6dc358888defa17357067a.bindPopup(popup_6b322cd213a9d3e02c505515595ca015)
+        ;
+
+        
+    
+    
+            var circle_marker_129e25504451523789ff1869323c60fa = L.circleMarker(
+                [25.00919, 121.4580312],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_17e72ebc838e02447a4024afbccd768a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_594eff7020a92383ba038a77555f4445 = $(`<div id="html_594eff7020a92383ba038a77555f4445" style="width: 100.0%; height: 100.0%;">名稱: ABV Bar & Kitchen<br>地址: Fuzhong Rd, 67號12樓</div>`)[0];
+                popup_17e72ebc838e02447a4024afbccd768a.setContent(html_594eff7020a92383ba038a77555f4445);
+            
+        
+
+        circle_marker_129e25504451523789ff1869323c60fa.bindPopup(popup_17e72ebc838e02447a4024afbccd768a)
+        ;
+
+        
+    
+    
+            var circle_marker_89725a806dead7efee9b86a6ebadef8c = L.circleMarker(
+                [25.0558532, 121.5483811],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_431c5da62254317d353fdabafa992194 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fde3d50d9b7a6f36cf8a1ca5160a487e = $(`<div id="html_fde3d50d9b7a6f36cf8a1ca5160a487e" style="width: 100.0%; height: 100.0%;">名稱: M.O. Bar<br>地址: Level 5, No. 158, DunHua N Rd</div>`)[0];
+                popup_431c5da62254317d353fdabafa992194.setContent(html_fde3d50d9b7a6f36cf8a1ca5160a487e);
+            
+        
+
+        circle_marker_89725a806dead7efee9b86a6ebadef8c.bindPopup(popup_431c5da62254317d353fdabafa992194)
+        ;
+
+        
+    
+    
+            var circle_marker_c350f921baed9c52c7ac2b45b91286f2 = L.circleMarker(
+                [25.010697, 121.463286],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_f5497e67dd9433525ff6f2a0af4c5f2d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e13782b313f8a359271806a3a01c2228 = $(`<div id="html_e13782b313f8a359271806a3a01c2228" style="width: 100.0%; height: 100.0%;">名稱: 90's Dining Bar<br>地址: No. 124號, Section 1, Zhongshan Rd</div>`)[0];
+                popup_f5497e67dd9433525ff6f2a0af4c5f2d.setContent(html_e13782b313f8a359271806a3a01c2228);
+            
+        
+
+        circle_marker_c350f921baed9c52c7ac2b45b91286f2.bindPopup(popup_f5497e67dd9433525ff6f2a0af4c5f2d)
+        ;
+
+        
+    
+    
+            var circle_marker_1f84c587da0e1fb13edada40721c2402 = L.circleMarker(
+                [25.0496576, 121.5276047],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_922bb0740c5aedc6b7285ff4830d6090 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_87d26366078cbebdc3c96669b986cc26 = $(`<div id="html_87d26366078cbebdc3c96669b986cc26" style="width: 100.0%; height: 100.0%;">名稱: Lux Terrace BAR 中山區 林森店<br>地址: No. 82號, Lane 107, Linsen N Rd</div>`)[0];
+                popup_922bb0740c5aedc6b7285ff4830d6090.setContent(html_87d26366078cbebdc3c96669b986cc26);
+            
+        
+
+        circle_marker_1f84c587da0e1fb13edada40721c2402.bindPopup(popup_922bb0740c5aedc6b7285ff4830d6090)
+        ;
+
+        
+    
+    
+            var circle_marker_f1507dc07b7000f5d53c8bb11af97aa6 = L.circleMarker(
+                [25.0325142, 121.5498877],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_2dd92fe248df2f3c2ee26198358eed22 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_62f0b6e14fe3a22ab022b85e18294bc6 = $(`<div id="html_62f0b6e14fe3a22ab022b85e18294bc6" style="width: 100.0%; height: 100.0%;">名稱: VG the Seafood Bar, Taipei<br>地址: Lane 11, Section 2, Dunhua S Rd, 6號1樓</div>`)[0];
+                popup_2dd92fe248df2f3c2ee26198358eed22.setContent(html_62f0b6e14fe3a22ab022b85e18294bc6);
+            
+        
+
+        circle_marker_f1507dc07b7000f5d53c8bb11af97aa6.bindPopup(popup_2dd92fe248df2f3c2ee26198358eed22)
+        ;
+
+        
+    
+    
+            var circle_marker_06bd57f84f9e6316954002191235024b = L.circleMarker(
+                [25.0544284, 121.542738],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_540de26cd187cdaef28191366f69ffc0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_056a7bebc04b1366075ae10f57203432 = $(`<div id="html_056a7bebc04b1366075ae10f57203432" style="width: 100.0%; height: 100.0%;">名稱: Honn Bar 酒吧<br>地址: No. 370號, Changchun Rd</div>`)[0];
+                popup_540de26cd187cdaef28191366f69ffc0.setContent(html_056a7bebc04b1366075ae10f57203432);
+            
+        
+
+        circle_marker_06bd57f84f9e6316954002191235024b.bindPopup(popup_540de26cd187cdaef28191366f69ffc0)
+        ;
+
+        
+    
+    
+            var circle_marker_38fa6744197857578ca441759d62e2c6 = L.circleMarker(
+                [25.0274921, 121.5556465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_08c5e8b811b67a385ccb22f040a40675 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3563ada2bbd59d51ebd6b910719024d0 = $(`<div id="html_3563ada2bbd59d51ebd6b910719024d0" style="width: 100.0%; height: 100.0%;">名稱: 精釀啤酒專門 ParkLife Plus+ Craft Beer Bar<br>地址: No. 42號, Lane 171, Tonghua St</div>`)[0];
+                popup_08c5e8b811b67a385ccb22f040a40675.setContent(html_3563ada2bbd59d51ebd6b910719024d0);
+            
+        
+
+        circle_marker_38fa6744197857578ca441759d62e2c6.bindPopup(popup_08c5e8b811b67a385ccb22f040a40675)
+        ;
+
+        
+    
+    
+            var circle_marker_ffee28cdceab6cb9dd4630b613d6fa22 = L.circleMarker(
+                [25.0618921, 121.5004089],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_04beb24702e46da8b7aa3f2d311291c8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bf116f5543716889beb14465598675d0 = $(`<div id="html_bf116f5543716889beb14465598675d0" style="width: 100.0%; height: 100.0%;">名稱: 貳室USroom•dessert<br>地址: No. 14號, Wenhua S Rd</div>`)[0];
+                popup_04beb24702e46da8b7aa3f2d311291c8.setContent(html_bf116f5543716889beb14465598675d0);
+            
+        
+
+        circle_marker_ffee28cdceab6cb9dd4630b613d6fa22.bindPopup(popup_04beb24702e46da8b7aa3f2d311291c8)
+        ;
+
+        
+    
+    
+            var circle_marker_fcb528bbfdb4c610713468ed5eca5448 = L.circleMarker(
+                [25.0426454, 121.5520721],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_f65d064519ff80fc7b8b060c4b3a504e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_613c88b9f3a768cd94c9fdac6b972188 = $(`<div id="html_613c88b9f3a768cd94c9fdac6b972188" style="width: 100.0%; height: 100.0%;">名稱: Le buno dessert & bar<br>地址: No. 55號, Lane 187, Section 1, Dunhua S Rd</div>`)[0];
+                popup_f65d064519ff80fc7b8b060c4b3a504e.setContent(html_613c88b9f3a768cd94c9fdac6b972188);
+            
+        
+
+        circle_marker_fcb528bbfdb4c610713468ed5eca5448.bindPopup(popup_f65d064519ff80fc7b8b060c4b3a504e)
+        ;
+
+        
+    
+    
+            var circle_marker_1bc98e8acd8c827a46545766d81181d4 = L.circleMarker(
+                [25.0438917, 121.5503972],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_aeeabc989dcb1b0a600d631096b039d5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_408c54b0dfeb90c0b53db40d946a9985 = $(`<div id="html_408c54b0dfeb90c0b53db40d946a9985" style="width: 100.0%; height: 100.0%;">名稱: Nice Cream<br>地址: Alley 40, Lane 181, Section 4, Zhongxiao E Rd, 6號1樓</div>`)[0];
+                popup_aeeabc989dcb1b0a600d631096b039d5.setContent(html_408c54b0dfeb90c0b53db40d946a9985);
+            
+        
+
+        circle_marker_1bc98e8acd8c827a46545766d81181d4.bindPopup(popup_aeeabc989dcb1b0a600d631096b039d5)
+        ;
+
+        
+    
+    
+            var circle_marker_d0f51257ae87a1a1bbc82fd089f1aecd = L.circleMarker(
+                [25.0433056, 121.5069417],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_5fd1603798d48c7a1c46bcd884d91b80 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2c0fae53f38a37d3e8275634f1815619 = $(`<div id="html_2c0fae53f38a37d3e8275634f1815619" style="width: 100.0%; height: 100.0%;">名稱: Hong Kong Dessert<br>地址: Lane 27, Chengdu Rd, 27號1樓</div>`)[0];
+                popup_5fd1603798d48c7a1c46bcd884d91b80.setContent(html_2c0fae53f38a37d3e8275634f1815619);
+            
+        
+
+        circle_marker_d0f51257ae87a1a1bbc82fd089f1aecd.bindPopup(popup_5fd1603798d48c7a1c46bcd884d91b80)
+        ;
+
+        
+    
+    
+            var circle_marker_8c9836b9c56fc27c6db18f0033447d8b = L.circleMarker(
+                [25.0427124, 121.555503],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_bd9334e8a5510c70ca8145605719006c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_78594800d3be8accc9815def510f591b = $(`<div id="html_78594800d3be8accc9815def510f591b" style="width: 100.0%; height: 100.0%;">名稱: The Original Sao Dou Hua<br>地址: No. 26號, Lane 131, Yanji St</div>`)[0];
+                popup_bd9334e8a5510c70ca8145605719006c.setContent(html_78594800d3be8accc9815def510f591b);
+            
+        
+
+        circle_marker_8c9836b9c56fc27c6db18f0033447d8b.bindPopup(popup_bd9334e8a5510c70ca8145605719006c)
+        ;
+
+        
+    
+    
+            var circle_marker_e9787a21cb278328cdf2a37caebf8a7d = L.circleMarker(
+                [25.0319974, 121.5532512],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_9775e66b42cacd4c0ea00409776076a6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d8b805f5f86d5e65b391a64d631c09d1 = $(`<div id="html_d8b805f5f86d5e65b391a64d631c09d1" style="width: 100.0%; height: 100.0%;">名稱: 植物園烘焙甜點店 Albuca Dessert 通安店<br>地址: No. 30號, Tongan St</div>`)[0];
+                popup_9775e66b42cacd4c0ea00409776076a6.setContent(html_d8b805f5f86d5e65b391a64d631c09d1);
+            
+        
+
+        circle_marker_e9787a21cb278328cdf2a37caebf8a7d.bindPopup(popup_9775e66b42cacd4c0ea00409776076a6)
+        ;
+
+        
+    
+    
+            var circle_marker_58e3f7546a7bfaf7ce2fa06f3faf45aa = L.circleMarker(
+                [25.0565757, 121.5204459],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_3fddeb62c9faceb1627a06e599d970e7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_49ac3c438d13e6c6c6d90ba5c1839759 = $(`<div id="html_49ac3c438d13e6c6c6d90ba5c1839759" style="width: 100.0%; height: 100.0%;">名稱: 貨室甜品 Huoshih｜Taiwanese Dessert with Modern Twist<br>地址: No. 34號, Lane 71, Chifeng St</div>`)[0];
+                popup_3fddeb62c9faceb1627a06e599d970e7.setContent(html_49ac3c438d13e6c6c6d90ba5c1839759);
+            
+        
+
+        circle_marker_58e3f7546a7bfaf7ce2fa06f3faf45aa.bindPopup(popup_3fddeb62c9faceb1627a06e599d970e7)
+        ;
+
+        
+    
+    
+            var circle_marker_ee24db3ac6640a5044714465dffa8ac6 = L.circleMarker(
+                [25.0395104, 121.5536058],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_c045bf30e154e3fe6c4d92039081eea3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2989ccc2ed11c6fce4bad98cd4b32d94 = $(`<div id="html_2989ccc2ed11c6fce4bad98cd4b32d94" style="width: 100.0%; height: 100.0%;">名稱: 北門鳳李冰<br>地址: No. 9號, Alley 33, Lane 216, Section 4, Zhongxiao E Rd</div>`)[0];
+                popup_c045bf30e154e3fe6c4d92039081eea3.setContent(html_2989ccc2ed11c6fce4bad98cd4b32d94);
+            
+        
+
+        circle_marker_ee24db3ac6640a5044714465dffa8ac6.bindPopup(popup_c045bf30e154e3fe6c4d92039081eea3)
+        ;
+
+        
+    
+    
+            var circle_marker_e23714d5f753d82e4da3b25b3377b6ae = L.circleMarker(
+                [25.0191114, 121.5333061],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_5fa726199fac4a5da9c85e9c84d83e3a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_89452a9c3c9dcd954ccf9c0f013b2950 = $(`<div id="html_89452a9c3c9dcd954ccf9c0f013b2950" style="width: 100.0%; height: 100.0%;">名稱: 芋芋甜點舖<br>地址: No. 5號, Lane 76, Section 3, Xinsheng S Rd</div>`)[0];
+                popup_5fa726199fac4a5da9c85e9c84d83e3a.setContent(html_89452a9c3c9dcd954ccf9c0f013b2950);
+            
+        
+
+        circle_marker_e23714d5f753d82e4da3b25b3377b6ae.bindPopup(popup_5fa726199fac4a5da9c85e9c84d83e3a)
+        ;
+
+        
+    
+    
+            var circle_marker_e828e9afffcbf1390c1148ef0d41c4f1 = L.circleMarker(
+                [25.0761681, 121.5757446],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_47427b79e7611b93bb34eae7400ddfcc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_156e5399b4b8cfe45ee94498ba4cb1b8 = $(`<div id="html_156e5399b4b8cfe45ee94498ba4cb1b8" style="width: 100.0%; height: 100.0%;">名稱: 李記甜品 Lee Dessert<br>地址: No. 123號, Jiangnan St</div>`)[0];
+                popup_47427b79e7611b93bb34eae7400ddfcc.setContent(html_156e5399b4b8cfe45ee94498ba4cb1b8);
+            
+        
+
+        circle_marker_e828e9afffcbf1390c1148ef0d41c4f1.bindPopup(popup_47427b79e7611b93bb34eae7400ddfcc)
+        ;
+
+        
+    
+    
+            var circle_marker_0ec74aecee937964017b6a8a4346830a = L.circleMarker(
+                [25.0394953, 121.5679586],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_7dca823d07ad624b30d66e879d8d8218 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e777fc56f77c603fa802b83859cfc35c = $(`<div id="html_e777fc56f77c603fa802b83859cfc35c" style="width: 100.0%; height: 100.0%;">名稱: Heritage Bakery & Cafe - Bellavita B1<br>地址: B1, No. 28號, Songren Rd</div>`)[0];
+                popup_7dca823d07ad624b30d66e879d8d8218.setContent(html_e777fc56f77c603fa802b83859cfc35c);
+            
+        
+
+        circle_marker_0ec74aecee937964017b6a8a4346830a.bindPopup(popup_7dca823d07ad624b30d66e879d8d8218)
+        ;
+
+        
+    
+    
+            var circle_marker_93a6db375d86338f342f861950acf6e2 = L.circleMarker(
+                [25.0139872, 121.5336346],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_a15891e175803dfc0e7721fa69dbd80a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_92a00f3ddce348e53ffc27ca3ef4fe89 = $(`<div id="html_92a00f3ddce348e53ffc27ca3ef4fe89" style="width: 100.0%; height: 100.0%;">名稱: Ho Chia Dessert Shop<br>地址: No. 124號, Section 3, Tingzhou Rd</div>`)[0];
+                popup_a15891e175803dfc0e7721fa69dbd80a.setContent(html_92a00f3ddce348e53ffc27ca3ef4fe89);
+            
+        
+
+        circle_marker_93a6db375d86338f342f861950acf6e2.bindPopup(popup_a15891e175803dfc0e7721fa69dbd80a)
+        ;
+
+        
+    
+    
+            var circle_marker_c7df50906468271b65cb169a5062384a = L.circleMarker(
+                [25.0563526, 121.5444942],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_cdbb6a0602fde924dd49c64fd4059783 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ccee8a0ada51c22399e2db920b991b44 = $(`<div id="html_ccee8a0ada51c22399e2db920b991b44" style="width: 100.0%; height: 100.0%;">名稱: Old Major Coffee (深夜咖啡), I'M Dessert<br>地址: No. 209號, Fuxing N Rd</div>`)[0];
+                popup_cdbb6a0602fde924dd49c64fd4059783.setContent(html_ccee8a0ada51c22399e2db920b991b44);
+            
+        
+
+        circle_marker_c7df50906468271b65cb169a5062384a.bindPopup(popup_cdbb6a0602fde924dd49c64fd4059783)
+        ;
+
+        
+    
+    
+            var circle_marker_b17c3fbb2af6a17c102e3f5503b1f4e7 = L.circleMarker(
+                [25.0465808, 121.5234064],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_b5be56fde6d8dbe1dfbacc538c90199f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_833ac9a2961c82b9eed71c828a753087 = $(`<div id="html_833ac9a2961c82b9eed71c828a753087" style="width: 100.0%; height: 100.0%;">名稱: Bonnie Sugar 森林店<br>地址: No. 9號, Beiping E Rd</div>`)[0];
+                popup_b5be56fde6d8dbe1dfbacc538c90199f.setContent(html_833ac9a2961c82b9eed71c828a753087);
+            
+        
+
+        circle_marker_b17c3fbb2af6a17c102e3f5503b1f4e7.bindPopup(popup_b5be56fde6d8dbe1dfbacc538c90199f)
+        ;
+
+        
+    
+    
+            var circle_marker_e95b6d26ff9ea88639a4c65ce559d842 = L.circleMarker(
+                [25.0362714, 121.5672955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_c955a5a86f73e2a2ac20d579b09ead0d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1880eb78dd2de0222040dd5277c92772 = $(`<div id="html_1880eb78dd2de0222040dd5277c92772" style="width: 100.0%; height: 100.0%;">名稱: Kai Kai Dessert SKM A11 Shop<br>地址: Songshou Rd, 11號2樓</div>`)[0];
+                popup_c955a5a86f73e2a2ac20d579b09ead0d.setContent(html_1880eb78dd2de0222040dd5277c92772);
+            
+        
+
+        circle_marker_e95b6d26ff9ea88639a4c65ce559d842.bindPopup(popup_c955a5a86f73e2a2ac20d579b09ead0d)
+        ;
+
+        
+    
+    
+            var circle_marker_67930037fdc5dd7626050bb89b16b759 = L.circleMarker(
+                [25.025515, 121.5314433],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_58823dd6d80416f7d5a520b57ba19032 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4919913ad5cfeb9d45b91e3b699ac234 = $(`<div id="html_4919913ad5cfeb9d45b91e3b699ac234" style="width: 100.0%; height: 100.0%;">名稱: 植物園烘焙甜點店 Albuca Dessert 泰順店<br>地址: No. 14號, Taishun St</div>`)[0];
+                popup_58823dd6d80416f7d5a520b57ba19032.setContent(html_4919913ad5cfeb9d45b91e3b699ac234);
+            
+        
+
+        circle_marker_67930037fdc5dd7626050bb89b16b759.bindPopup(popup_58823dd6d80416f7d5a520b57ba19032)
+        ;
+
+        
+    
+    
+            var circle_marker_542bee5cb6ef73130f483d8400426b5e = L.circleMarker(
+                [25.0666334, 121.5232443],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_2044c4c8705a1cabdc06bdb3add5cb7c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_40f8c6c64448a361b68ab919dc122342 = $(`<div id="html_40f8c6c64448a361b68ab919dc122342" style="width: 100.0%; height: 100.0%;">名稱: That Dessert 那個甜品<br>地址: Dehui St, 4-1號號</div>`)[0];
+                popup_2044c4c8705a1cabdc06bdb3add5cb7c.setContent(html_40f8c6c64448a361b68ab919dc122342);
+            
+        
+
+        circle_marker_542bee5cb6ef73130f483d8400426b5e.bindPopup(popup_2044c4c8705a1cabdc06bdb3add5cb7c)
+        ;
+
+        
+    
+    
+            var circle_marker_cca11dce2bee9ecb05bb0987853fd9b1 = L.circleMarker(
+                [25.0044513, 121.5174614],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_8f1ae87e155c6e54e91ef9d2fe4b9504 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b9ebfb4af01ec6f7818a4d194c652690 = $(`<div id="html_b9ebfb4af01ec6f7818a4d194c652690" style="width: 100.0%; height: 100.0%;">名稱: 162豆花<br>地址: No. 162號, Yongzhen Rd</div>`)[0];
+                popup_8f1ae87e155c6e54e91ef9d2fe4b9504.setContent(html_b9ebfb4af01ec6f7818a4d194c652690);
+            
+        
+
+        circle_marker_cca11dce2bee9ecb05bb0987853fd9b1.bindPopup(popup_8f1ae87e155c6e54e91ef9d2fe4b9504)
+        ;
+
+        
+    
+    
+            var circle_marker_bf8b4fb2f594539fff1402b2cfc05d49 = L.circleMarker(
+                [25.0308788, 121.551371],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_037ae121c9d858b0f50e69fa60cb8bbf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_233e8b8859e1213925f74a6e9090186a = $(`<div id="html_233e8b8859e1213925f74a6e9090186a" style="width: 100.0%; height: 100.0%;">名稱: 【烘焙DIY】Dough 動手玩-敦南店（提供機構、企業包場活動）macaron biscuit cake dessert DIY 甜點 蛋糕 馬卡龍 餅乾 DIY<br>地址: No. 48號, Lane 63, Section 2, Dunhua S Rd</div>`)[0];
+                popup_037ae121c9d858b0f50e69fa60cb8bbf.setContent(html_233e8b8859e1213925f74a6e9090186a);
+            
+        
+
+        circle_marker_bf8b4fb2f594539fff1402b2cfc05d49.bindPopup(popup_037ae121c9d858b0f50e69fa60cb8bbf)
+        ;
+
+        
+    
+    
+            var circle_marker_0db85255a74970c82006298a7edfbfbf = L.circleMarker(
+                [25.0292166, 121.5297367],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_4811081e075294be03cda189a9842c24 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ca6d6210d2259f88feaba13bc1a87d3a = $(`<div id="html_ca6d6210d2259f88feaba13bc1a87d3a" style="width: 100.0%; height: 100.0%;">名稱: MATA Tofu Pudding<br>地址: No. 63號, Yongkang St</div>`)[0];
+                popup_4811081e075294be03cda189a9842c24.setContent(html_ca6d6210d2259f88feaba13bc1a87d3a);
+            
+        
+
+        circle_marker_0db85255a74970c82006298a7edfbfbf.bindPopup(popup_4811081e075294be03cda189a9842c24)
+        ;
+
+        
+    
+    
+            var circle_marker_628df5181783811efd89345caf61bc93 = L.circleMarker(
+                [25.0296865, 121.5268411],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_dd67c9c0c1abfe7e4056713eff13ac01 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3585151475902eb147e2fa4c14e8d55d = $(`<div id="html_3585151475902eb147e2fa4c14e8d55d" style="width: 100.0%; height: 100.0%;">名稱: 深夜裡的法國手工甜點<br>地址: No. 1號, Lane 141, Section 2, Jinshan S Rd</div>`)[0];
+                popup_dd67c9c0c1abfe7e4056713eff13ac01.setContent(html_3585151475902eb147e2fa4c14e8d55d);
+            
+        
+
+        circle_marker_628df5181783811efd89345caf61bc93.bindPopup(popup_dd67c9c0c1abfe7e4056713eff13ac01)
+        ;
+
+        
+    
+    
+            var circle_marker_95f769005f1e4dd7d05bfdc3980a82a8 = L.circleMarker(
+                [25.0451915, 121.507785],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_49721c11eb030c42a7a253dc18ee9e0e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3afbff0bee472eaeccc98dcd940ae7be = $(`<div id="html_3afbff0bee472eaeccc98dcd940ae7be" style="width: 100.0%; height: 100.0%;">名稱: Kurikuri Taipei 栗栗クリクリ專門店<br>地址: No. 21號, Hanzhong St</div>`)[0];
+                popup_49721c11eb030c42a7a253dc18ee9e0e.setContent(html_3afbff0bee472eaeccc98dcd940ae7be);
+            
+        
+
+        circle_marker_95f769005f1e4dd7d05bfdc3980a82a8.bindPopup(popup_49721c11eb030c42a7a253dc18ee9e0e)
+        ;
+
+        
+    
+    
+            var circle_marker_113b0cd7c2f1be6d0996825b6143ff94 = L.circleMarker(
+                [25.0538298, 121.5195717],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_3a26bad31071f2e5da29811e7e1b6e55 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cbef8bfb8a8d9992157729021316313e = $(`<div id="html_cbef8bfb8a8d9992157729021316313e" style="width: 100.0%; height: 100.0%;">名稱: Pai Pai Cannoli & Gelato<br>地址: Lane 17, Chifeng St, 5號1樓</div>`)[0];
+                popup_3a26bad31071f2e5da29811e7e1b6e55.setContent(html_cbef8bfb8a8d9992157729021316313e);
+            
+        
+
+        circle_marker_113b0cd7c2f1be6d0996825b6143ff94.bindPopup(popup_3a26bad31071f2e5da29811e7e1b6e55)
+        ;
+
+        
+    
+    
+            var circle_marker_6bd42a07a981bcbb40516f0d1f4a9ea3 = L.circleMarker(
+                [25.0569138, 121.5208285],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_fecc8ae167c981a7d24970bbdd1d153c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_462c8e385e87853fede8ad17f735b981 = $(`<div id="html_462c8e385e87853fede8ad17f735b981" style="width: 100.0%; height: 100.0%;">名稱: Ron Museum<br>地址: Lane 66, Minsheng W Rd, 21號一樓</div>`)[0];
+                popup_fecc8ae167c981a7d24970bbdd1d153c.setContent(html_462c8e385e87853fede8ad17f735b981);
+            
+        
+
+        circle_marker_6bd42a07a981bcbb40516f0d1f4a9ea3.bindPopup(popup_fecc8ae167c981a7d24970bbdd1d153c)
+        ;
+
+        
+    
+    
+            var circle_marker_057585335333925eb4ef070517df9a93 = L.circleMarker(
+                [25.0324567, 121.5145307],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_dfd81c5151d0545d5ff95238416351c4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0a20235627143d9f1308f1d4f57a12d3 = $(`<div id="html_0a20235627143d9f1308f1d4f57a12d3" style="width: 100.0%; height: 100.0%;">名稱: tó-sū coffee dessert 這島 深夜咖啡甜點店<br>地址: Lane 19, Section 2, Chongqing S Rd, 2號1樓</div>`)[0];
+                popup_dfd81c5151d0545d5ff95238416351c4.setContent(html_0a20235627143d9f1308f1d4f57a12d3);
+            
+        
+
+        circle_marker_057585335333925eb4ef070517df9a93.bindPopup(popup_dfd81c5151d0545d5ff95238416351c4)
+        ;
+
+        
+    
+    
+            var circle_marker_d55531ea43c23641616b910380d02a7d = L.circleMarker(
+                [25.0638086, 121.4916876],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_575633c9b67307330e6d739bfbd646a0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_87d1758f5489352f5d4c8874bdb969d1 = $(`<div id="html_87d1758f5489352f5d4c8874bdb969d1" style="width: 100.0%; height: 100.0%;">名稱: Concerto 協奏曲 coffee/dessert<br>地址: No. 5號, Daren St</div>`)[0];
+                popup_575633c9b67307330e6d739bfbd646a0.setContent(html_87d1758f5489352f5d4c8874bdb969d1);
+            
+        
+
+        circle_marker_d55531ea43c23641616b910380d02a7d.bindPopup(popup_575633c9b67307330e6d739bfbd646a0)
+        ;
+
+        
+    
+    
+            var circle_marker_2e4295d6682c69a712e06d802e7dd254 = L.circleMarker(
+                [25.0436721, 121.5628501],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_2eae93fe5886b2c8aaa110dd039891c3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_522adade3ae6d3e7d84aa7227b85568a = $(`<div id="html_522adade3ae6d3e7d84aa7227b85568a" style="width: 100.0%; height: 100.0%;">名稱: LeTAO Eslite Songyan Store<br>地址: No. 30號, Lane 553, Section 4, Zhongxiao E Rd</div>`)[0];
+                popup_2eae93fe5886b2c8aaa110dd039891c3.setContent(html_522adade3ae6d3e7d84aa7227b85568a);
+            
+        
+
+        circle_marker_2e4295d6682c69a712e06d802e7dd254.bindPopup(popup_2eae93fe5886b2c8aaa110dd039891c3)
+        ;
+
+        
+    
+    
+            var circle_marker_6b46aa452efecbe4e8ecc4dcc29c832e = L.circleMarker(
+                [25.024905, 121.5233196],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_afef233efa2af97d55a31c91aa916ef5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_932b5376c6e386b221870641c46c0c1c = $(`<div id="html_932b5376c6e386b221870641c46c0c1c" style="width: 100.0%; height: 100.0%;">名稱: OPIUM FEN-YUAN<br>地址: No. 156號, Section 2, Nanchang Rd</div>`)[0];
+                popup_afef233efa2af97d55a31c91aa916ef5.setContent(html_932b5376c6e386b221870641c46c0c1c);
+            
+        
+
+        circle_marker_6b46aa452efecbe4e8ecc4dcc29c832e.bindPopup(popup_afef233efa2af97d55a31c91aa916ef5)
+        ;
+
+        
+    
+    
+            var circle_marker_28fd8ee709f986e86e34157abaf2d9d0 = L.circleMarker(
+                [25.057179, 121.5605242],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_44786e2e802d097d070792773689f991 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6d7a13ab0a99f1ecc5531a363ccbaa3f = $(`<div id="html_6d7a13ab0a99f1ecc5531a363ccbaa3f" style="width: 100.0%; height: 100.0%;">名稱: 綠帶純植物烘焙 GREEN BAKERY (內用時間到18:00)<br>地址: Alley 8, Lane 36, Section 5, Minsheng E Rd, 64號1樓</div>`)[0];
+                popup_44786e2e802d097d070792773689f991.setContent(html_6d7a13ab0a99f1ecc5531a363ccbaa3f);
+            
+        
+
+        circle_marker_28fd8ee709f986e86e34157abaf2d9d0.bindPopup(popup_44786e2e802d097d070792773689f991)
+        ;
+
+        
+    
+    
+            var circle_marker_2377c4bd50a1d0a7750867af40a6629e = L.circleMarker(
+                [25.1086323, 121.843507],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_dc3f8db0e8a896f1817454e6afdaba36 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5c13c7813975811a13f44ffada37dfe8 = $(`<div id="html_5c13c7813975811a13f44ffada37dfe8" style="width: 100.0%; height: 100.0%;">名稱: Jiufen Xingyu Restaurant<br>地址: Shuqi Rd, 35號2樓</div>`)[0];
+                popup_dc3f8db0e8a896f1817454e6afdaba36.setContent(html_5c13c7813975811a13f44ffada37dfe8);
+            
+        
+
+        circle_marker_2377c4bd50a1d0a7750867af40a6629e.bindPopup(popup_dc3f8db0e8a896f1817454e6afdaba36)
+        ;
+
+        
+    
+    
+            var circle_marker_d4798ef1c307c34c01c360a2be7cb83b = L.circleMarker(
+                [25.044309, 121.5062132],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_bef397d4d1c2a90f4de2bee103d7d1b4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_26740dec252c1f1ab30051f660b0f451 = $(`<div id="html_26740dec252c1f1ab30051f660b0f451" style="width: 100.0%; height: 100.0%;">名稱: 西門町-提拉米蘇-Tiramisu Dessert<br>地址: Xining Rd, 48之5號</div>`)[0];
+                popup_bef397d4d1c2a90f4de2bee103d7d1b4.setContent(html_26740dec252c1f1ab30051f660b0f451);
+            
+        
+
+        circle_marker_d4798ef1c307c34c01c360a2be7cb83b.bindPopup(popup_bef397d4d1c2a90f4de2bee103d7d1b4)
+        ;
+
+        
+    
+    
+            var circle_marker_ec12e12bae1d85997dd50f52a7e2a41b = L.circleMarker(
+                [25.0023868, 121.5150243],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_86a316fc5faa8652a2d54375dcaa750b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6b57e5435f189306d608cc53e4498034 = $(`<div id="html_6b57e5435f189306d608cc53e4498034" style="width: 100.0%; height: 100.0%;">名稱: Happy Young House<br>地址: No. 226號, Anle Rd</div>`)[0];
+                popup_86a316fc5faa8652a2d54375dcaa750b.setContent(html_6b57e5435f189306d608cc53e4498034);
+            
+        
+
+        circle_marker_ec12e12bae1d85997dd50f52a7e2a41b.bindPopup(popup_86a316fc5faa8652a2d54375dcaa750b)
+        ;
+
+        
+    
+    
+            var circle_marker_1c9afca8c437d7784f83474d8c2932e8 = L.circleMarker(
+                [25.025, 121.531374],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_44356df4f154fb042b6e02b2d8c8a63e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2af921442f4cdeaa0cd94149609a7068 = $(`<div id="html_2af921442f4cdeaa0cd94149609a7068" style="width: 100.0%; height: 100.0%;">名稱: NKSDchoco 七見櫻堂甜點專賣店<br>地址: No. 28號, Taishun St</div>`)[0];
+                popup_44356df4f154fb042b6e02b2d8c8a63e.setContent(html_2af921442f4cdeaa0cd94149609a7068);
+            
+        
+
+        circle_marker_1c9afca8c437d7784f83474d8c2932e8.bindPopup(popup_44356df4f154fb042b6e02b2d8c8a63e)
+        ;
+
+        
+    
+    
+            var circle_marker_5070f012943520fcf91ae2211ffef420 = L.circleMarker(
+                [25.084594, 121.4615028],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_655d673af3c7c6bb10a67b20237c8025 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2a4d6aa30cbb51c23aded00828c85f67 = $(`<div id="html_2a4d6aa30cbb51c23aded00828c85f67" style="width: 100.0%; height: 100.0%;">名稱: 覓境義廚 Dessert & Cafe<br>地址: No. 138號, Zhangrong Rd</div>`)[0];
+                popup_655d673af3c7c6bb10a67b20237c8025.setContent(html_2a4d6aa30cbb51c23aded00828c85f67);
+            
+        
+
+        circle_marker_5070f012943520fcf91ae2211ffef420.bindPopup(popup_655d673af3c7c6bb10a67b20237c8025)
+        ;
+
+        
+    
+    
+            var circle_marker_2cb281fb164d1d8091e01754356970f7 = L.circleMarker(
+                [25.0558677, 121.5151325],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_cb7bdbedfdd02091582ddba9864ecd48 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b6fd17775cdd69a96e58842ca1189bb4 = $(`<div id="html_b6fd17775cdd69a96e58842ca1189bb4" style="width: 100.0%; height: 100.0%;">名稱: 寧夏夜市甘記燒仙草刨冰甜點 NINGXIA NIGHTMARKET 🍨 GANJI DESSERT SHOP🍨<br>地址: No. 30之4號, Ningxia Rd</div>`)[0];
+                popup_cb7bdbedfdd02091582ddba9864ecd48.setContent(html_b6fd17775cdd69a96e58842ca1189bb4);
+            
+        
+
+        circle_marker_2cb281fb164d1d8091e01754356970f7.bindPopup(popup_cb7bdbedfdd02091582ddba9864ecd48)
+        ;
+
+        
+    
+    
+            var circle_marker_55f99b0a690587d8580e28dc5c80e353 = L.circleMarker(
+                [25.0667522, 121.5408669],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_dd4b6703cff9e8b19b28abd45d84695d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7266d0a3e10cab61f563f8acac834db8 = $(`<div id="html_7266d0a3e10cab61f563f8acac834db8" style="width: 100.0%; height: 100.0%;">名稱: 邱太太甜品坊<br>地址: No. 382號, Long Jiang Rd</div>`)[0];
+                popup_dd4b6703cff9e8b19b28abd45d84695d.setContent(html_7266d0a3e10cab61f563f8acac834db8);
+            
+        
+
+        circle_marker_55f99b0a690587d8580e28dc5c80e353.bindPopup(popup_dd4b6703cff9e8b19b28abd45d84695d)
+        ;
+
+        
+    
+    
+            var circle_marker_d1e61a6669134b0108f496b364879dd5 = L.circleMarker(
+                [25.0573749, 121.5155686],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_23f4a0bcc28761ef92f9a3e4f83a26ba = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_acbeebe59029811903c19e86632b605b = $(`<div id="html_acbeebe59029811903c19e86632b605b" style="width: 100.0%; height: 100.0%;">名稱: Beans Village<br>地址: No. 49號, Ningxia Rd</div>`)[0];
+                popup_23f4a0bcc28761ef92f9a3e4f83a26ba.setContent(html_acbeebe59029811903c19e86632b605b);
+            
+        
+
+        circle_marker_d1e61a6669134b0108f496b364879dd5.bindPopup(popup_23f4a0bcc28761ef92f9a3e4f83a26ba)
+        ;
+
+        
+    
+    
+            var circle_marker_2405eca40be5a798c91e171779f6cb29 = L.circleMarker(
+                [25.0364249, 121.5555148],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_f62e8f65d30c2acda325ca62a6c688a6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_10fa213f6f48fe0498f8a90679b3f171 = $(`<div id="html_10fa213f6f48fe0498f8a90679b3f171" style="width: 100.0%; height: 100.0%;">名稱: Double V<br>地址: Yanji St, 234號一樓</div>`)[0];
+                popup_f62e8f65d30c2acda325ca62a6c688a6.setContent(html_10fa213f6f48fe0498f8a90679b3f171);
+            
+        
+
+        circle_marker_2405eca40be5a798c91e171779f6cb29.bindPopup(popup_f62e8f65d30c2acda325ca62a6c688a6)
+        ;
+
+        
+    
+    
+            var circle_marker_226db8a0a90ef8e78e800200d26e2c67 = L.circleMarker(
+                [25.0937644, 121.5257795],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_d8aef66e74a56017e45b4786e434b929 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2e7456cbea071c3e519a6e5623678e5e = $(`<div id="html_2e7456cbea071c3e519a6e5623678e5e" style="width: 100.0%; height: 100.0%;">名稱: Parfait Dessert 完美甜點工作室（主要為預定店）<br>地址: No. 2-3號, Meide St</div>`)[0];
+                popup_d8aef66e74a56017e45b4786e434b929.setContent(html_2e7456cbea071c3e519a6e5623678e5e);
+            
+        
+
+        circle_marker_226db8a0a90ef8e78e800200d26e2c67.bindPopup(popup_d8aef66e74a56017e45b4786e434b929)
+        ;
+
+        
+    
+    
+            var circle_marker_ece8b3212542d8a10234fb67701f83c3 = L.circleMarker(
+                [25.0422685, 121.5091517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_8abaf7bb73223aebb4980563b15e28c6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9d526b7a7cd56fbb8ce885b2258fabb1 = $(`<div id="html_9d526b7a7cd56fbb8ce885b2258fabb1" style="width: 100.0%; height: 100.0%;">名稱: 于記杏仁(衡陽店)<br>地址: No. 101號, Hengyang Rd</div>`)[0];
+                popup_8abaf7bb73223aebb4980563b15e28c6.setContent(html_9d526b7a7cd56fbb8ce885b2258fabb1);
+            
+        
+
+        circle_marker_ece8b3212542d8a10234fb67701f83c3.bindPopup(popup_8abaf7bb73223aebb4980563b15e28c6)
+        ;
+
+        
+    
+    
+            var circle_marker_de80f2473997b55c60311c97278f4b28 = L.circleMarker(
+                [25.0404056, 121.5531528],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_541d8a2f22425ef3d52737fd86b19045 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_60bbbb58a03cac8a7dd903595eba098e = $(`<div id="html_60bbbb58a03cac8a7dd903595eba098e" style="width: 100.0%; height: 100.0%;">名稱: Jiugong Douhua Soybean Pudding Shop<br>地址: No. 3, Alley 19, Lane 216, Section 4, Zhongxiao E Rd</div>`)[0];
+                popup_541d8a2f22425ef3d52737fd86b19045.setContent(html_60bbbb58a03cac8a7dd903595eba098e);
+            
+        
+
+        circle_marker_de80f2473997b55c60311c97278f4b28.bindPopup(popup_541d8a2f22425ef3d52737fd86b19045)
+        ;
+
+        
+    
+    
+            var circle_marker_d6a9b9e2fb974a1834bc76947086d418 = L.circleMarker(
+                [25.0419914, 121.5631673],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_d66899007d18859e41778e2d56de9344 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b475daf936482b6ebcaaec6f83622939 = $(`<div id="html_b475daf936482b6ebcaaec6f83622939" style="width: 100.0%; height: 100.0%;">名稱: TRIPLE T burger/dessert<br>地址: No. 7號, Alley 2, Lane 553, Section 4, Zhongxiao E Rd</div>`)[0];
+                popup_d66899007d18859e41778e2d56de9344.setContent(html_b475daf936482b6ebcaaec6f83622939);
+            
+        
+
+        circle_marker_d6a9b9e2fb974a1834bc76947086d418.bindPopup(popup_d66899007d18859e41778e2d56de9344)
+        ;
+
+        
+    
+    
+            var circle_marker_59ab4fa78a41b91c4fdfdcd39dd52372 = L.circleMarker(
+                [24.982384, 121.564323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_a9c70b893d77c84f12b2a1e1e9562ea0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9ca64d0f6ba4b4862f166a59c29fd5ac = $(`<div id="html_9ca64d0f6ba4b4862f166a59c29fd5ac" style="width: 100.0%; height: 100.0%;">名稱: Low Calorie Dessert<br>地址: No. 41, Section 3, Muxin Rd</div>`)[0];
+                popup_a9c70b893d77c84f12b2a1e1e9562ea0.setContent(html_9ca64d0f6ba4b4862f166a59c29fd5ac);
+            
+        
+
+        circle_marker_59ab4fa78a41b91c4fdfdcd39dd52372.bindPopup(popup_a9c70b893d77c84f12b2a1e1e9562ea0)
+        ;
+
+        
+    
+    
+            var circle_marker_6e1319ea62e8075e4ec6f20d8eb8d51c = L.circleMarker(
+                [25.0594137, 121.3641058],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_104da7d2bd98bb97ee93152f4a9a8e27 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cd13b6cc3e977d7077dd9aacf3c487ac = $(`<div id="html_cd13b6cc3e977d7077dd9aacf3c487ac" style="width: 100.0%; height: 100.0%;">名稱: Sendoya Dessert<br>地址: No. 65號, Wenxing Rd</div>`)[0];
+                popup_104da7d2bd98bb97ee93152f4a9a8e27.setContent(html_cd13b6cc3e977d7077dd9aacf3c487ac);
+            
+        
+
+        circle_marker_6e1319ea62e8075e4ec6f20d8eb8d51c.bindPopup(popup_104da7d2bd98bb97ee93152f4a9a8e27)
+        ;
+
+        
+    
+    
+            var circle_marker_1aa72959a5d8994eec8eef284b750913 = L.circleMarker(
+                [25.0433284, 121.5634836],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_2cb728e71e314f59dfa1740dc7d62019 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8aab7a1443d77fd1e653a86b7162f4c6 = $(`<div id="html_8aab7a1443d77fd1e653a86b7162f4c6" style="width: 100.0%; height: 100.0%;">名稱: 79甜品NIGARI TOFU PUDDING<br>地址: Alley 22, Lane 553, Section 4, Zhongxiao E Rd, 53號1樓</div>`)[0];
+                popup_2cb728e71e314f59dfa1740dc7d62019.setContent(html_8aab7a1443d77fd1e653a86b7162f4c6);
+            
+        
+
+        circle_marker_1aa72959a5d8994eec8eef284b750913.bindPopup(popup_2cb728e71e314f59dfa1740dc7d62019)
+        ;
+
+        
+    
+    
+            var circle_marker_0cf50bbc6bc5d5e4f173c59b148a8663 = L.circleMarker(
+                [25.0452898, 121.5469837],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_59801954622e9ffc5cb1699720c0555a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d8a887049eb6e32ea11b0bc16dc1d549 = $(`<div id="html_d8a887049eb6e32ea11b0bc16dc1d549" style="width: 100.0%; height: 100.0%;">名稱: Zhuangtou Douhua Stall<br>地址: No. 73號, Section 4, Civic Blvd</div>`)[0];
+                popup_59801954622e9ffc5cb1699720c0555a.setContent(html_d8a887049eb6e32ea11b0bc16dc1d549);
+            
+        
+
+        circle_marker_0cf50bbc6bc5d5e4f173c59b148a8663.bindPopup(popup_59801954622e9ffc5cb1699720c0555a)
+        ;
+
+        
+    
+    
+            var circle_marker_c6d52a3bc786d80cd103d7e836b23982 = L.circleMarker(
+                [25.0883944, 121.5257861],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_31ce4eafc2a59c787ee3f86f323ba2bd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e77f5595dffd1fa6e00647c587bbe3af = $(`<div id="html_e77f5595dffd1fa6e00647c587bbe3af" style="width: 100.0%; height: 100.0%;">名稱: Xin Fa Ting Shaved Ice<br>地址: No. 1號, Anping St</div>`)[0];
+                popup_31ce4eafc2a59c787ee3f86f323ba2bd.setContent(html_e77f5595dffd1fa6e00647c587bbe3af);
+            
+        
+
+        circle_marker_c6d52a3bc786d80cd103d7e836b23982.bindPopup(popup_31ce4eafc2a59c787ee3f86f323ba2bd)
+        ;
+
+        
+    
+    
+            var circle_marker_ecd32344e127c767e25966c54aa88426 = L.circleMarker(
+                [25.033946, 121.5517429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_d327fc46ff9ad861f2685d5be1722e39 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0584767f96462fae37edb2233d4db972 = $(`<div id="html_0584767f96462fae37edb2233d4db972" style="width: 100.0%; height: 100.0%;">名稱: Q sweet — boutique desserts<br>地址: No. 7號, Lane 199, Section 4, Xinyi Rd</div>`)[0];
+                popup_d327fc46ff9ad861f2685d5be1722e39.setContent(html_0584767f96462fae37edb2233d4db972);
+            
+        
+
+        circle_marker_ecd32344e127c767e25966c54aa88426.bindPopup(popup_d327fc46ff9ad861f2685d5be1722e39)
+        ;
+
+        
+    
+    
+            var circle_marker_39257b25aadec2377541a2e3b2309274 = L.circleMarker(
+                [24.9948805, 121.4545126],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_219fa505509b9b4a742e35ab38430512 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_16db460b154846d5ee25b5fcc9c40b9b = $(`<div id="html_16db460b154846d5ee25b5fcc9c40b9b" style="width: 100.0%; height: 100.0%;">名稱: P.P.P Dessert 脆皮甜甜圈<br>地址: No. 7號, Alley 3, Lane 47, Section 2, Sichuan Road</div>`)[0];
+                popup_219fa505509b9b4a742e35ab38430512.setContent(html_16db460b154846d5ee25b5fcc9c40b9b);
+            
+        
+
+        circle_marker_39257b25aadec2377541a2e3b2309274.bindPopup(popup_219fa505509b9b4a742e35ab38430512)
+        ;
+
+        
+    
+    
+            var circle_marker_73a951663602530430e9f2fe038ef51e = L.circleMarker(
+                [25.0396219, 121.567641],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_11c1121c2cb094b5d165bd20c820ed34 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f31f233f5793657762f0e8e43a1ff08c = $(`<div id="html_f31f233f5793657762f0e8e43a1ff08c" style="width: 100.0%; height: 100.0%;">名稱: Silk Sweet絹絲谷｜乳酪蛋糕&巧克力<br>地址: B2, No, B2, No. 28號, Songren Rd</div>`)[0];
+                popup_11c1121c2cb094b5d165bd20c820ed34.setContent(html_f31f233f5793657762f0e8e43a1ff08c);
+            
+        
+
+        circle_marker_73a951663602530430e9f2fe038ef51e.bindPopup(popup_11c1121c2cb094b5d165bd20c820ed34)
+        ;
+
+        
+    
+    
+            var circle_marker_9a8a0649d20ab961466562bfab5b9282 = L.circleMarker(
+                [24.963512, 121.3042544],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_c828424762523309bdd5e0a8248d8609 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f4acc9360d3fa07f0ddba1910b10d2b4 = $(`<div id="html_f4acc9360d3fa07f0ddba1910b10d2b4" style="width: 100.0%; height: 100.0%;">名稱: Sweet Dessert雞蛋糕<br>地址: No. 116號, Yiyong St</div>`)[0];
+                popup_c828424762523309bdd5e0a8248d8609.setContent(html_f4acc9360d3fa07f0ddba1910b10d2b4);
+            
+        
+
+        circle_marker_9a8a0649d20ab961466562bfab5b9282.bindPopup(popup_c828424762523309bdd5e0a8248d8609)
+        ;
+
+        
+    
+    
+            var circle_marker_be1ca4f53303e8a30d4c8947697eb3ce = L.circleMarker(
+                [25.0867999, 121.2818143],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_6e976c3bd84c381e5afacfc53a887cec = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e58410a4c8f611754f876f3ef3ccc416 = $(`<div id="html_e58410a4c8f611754f876f3ef3ccc416" style="width: 100.0%; height: 100.0%;">名稱: Da Wang Dessert<br>地址: 山腳里海山路189號</div>`)[0];
+                popup_6e976c3bd84c381e5afacfc53a887cec.setContent(html_e58410a4c8f611754f876f3ef3ccc416);
+            
+        
+
+        circle_marker_be1ca4f53303e8a30d4c8947697eb3ce.bindPopup(popup_6e976c3bd84c381e5afacfc53a887cec)
+        ;
+
+        
+    
+    
+            var circle_marker_804bbff340bee7e76a77fa96a34cf1a5 = L.circleMarker(
+                [25.0877461, 121.5209314],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_5448f2adabdff3d3f9d78a603a442128 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a0c47c9c1a38e4cd6e2a6b3f84dce824 = $(`<div id="html_a0c47c9c1a38e4cd6e2a6b3f84dce824" style="width: 100.0%; height: 100.0%;">名稱: BOBEEB — Bar & Desserts | Shilin Night Market（스린 야시장｜シーリン士林夜市）<br>地址: No. 172-3號, Hougang St</div>`)[0];
+                popup_5448f2adabdff3d3f9d78a603a442128.setContent(html_a0c47c9c1a38e4cd6e2a6b3f84dce824);
+            
+        
+
+        circle_marker_804bbff340bee7e76a77fa96a34cf1a5.bindPopup(popup_5448f2adabdff3d3f9d78a603a442128)
+        ;
+
+        
+    
+    
+            var circle_marker_debdac3720758eeb665726e39c250ea2 = L.circleMarker(
+                [25.018977, 121.533552],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_748900547ee39a01533d495586982a8e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_301a89a8e54e24236b28a4753c50ab49 = $(`<div id="html_301a89a8e54e24236b28a4753c50ab49" style="width: 100.0%; height: 100.0%;">名稱: Taiyi Milk King<br>地址: No. 82號, Section 3, Xinsheng S Rd</div>`)[0];
+                popup_748900547ee39a01533d495586982a8e.setContent(html_301a89a8e54e24236b28a4753c50ab49);
+            
+        
+
+        circle_marker_debdac3720758eeb665726e39c250ea2.bindPopup(popup_748900547ee39a01533d495586982a8e)
+        ;
+
+        
+    
+    
+            var circle_marker_3b05c0d8dc9047df07af2d41fc263043 = L.circleMarker(
+                [25.0425403, 121.5465802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_b416ae9acc3c67e9705ee4e8164d5dad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_35386002a3af682ce540c85b3646a95e = $(`<div id="html_35386002a3af682ce540c85b3646a95e" style="width: 100.0%; height: 100.0%;">名稱: akeruE Dessert<br>地址: No. 54號, Lane 190, Section 1, Dunhua S Rd</div>`)[0];
+                popup_b416ae9acc3c67e9705ee4e8164d5dad.setContent(html_35386002a3af682ce540c85b3646a95e);
+            
+        
+
+        circle_marker_3b05c0d8dc9047df07af2d41fc263043.bindPopup(popup_b416ae9acc3c67e9705ee4e8164d5dad)
+        ;
+
+        
+    
+    
+            var circle_marker_3b180abe0f573130f31b9bb9a4c24d92 = L.circleMarker(
+                [25.0284927, 121.5417696],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_1bd07318f127160b1223c8b98b9eb8f6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_48176b46548ca70034ade5aabd54ebbb = $(`<div id="html_48176b46548ca70034ade5aabd54ebbb" style="width: 100.0%; height: 100.0%;">名稱: Small Courtyard<br>地址: No. 34號, Lane 148, Section 2, Fuxing S Rd</div>`)[0];
+                popup_1bd07318f127160b1223c8b98b9eb8f6.setContent(html_48176b46548ca70034ade5aabd54ebbb);
+            
+        
+
+        circle_marker_3b180abe0f573130f31b9bb9a4c24d92.bindPopup(popup_1bd07318f127160b1223c8b98b9eb8f6)
+        ;
+
+        
+    
+    
+            var circle_marker_7f3b019b0edeac7a19dbedf30ebdc35c = L.circleMarker(
+                [25.044503, 121.5776281],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_6204ae760f96658cb3101a2126c8c9ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_59c6c69e10c5a8d131ef5e205c0a3a3f = $(`<div id="html_59c6c69e10c5a8d131ef5e205c0a3a3f" style="width: 100.0%; height: 100.0%;">名稱: 涼涼港式甜品<br>地址: No. 232號, Songshan Rd</div>`)[0];
+                popup_6204ae760f96658cb3101a2126c8c9ed.setContent(html_59c6c69e10c5a8d131ef5e205c0a3a3f);
+            
+        
+
+        circle_marker_7f3b019b0edeac7a19dbedf30ebdc35c.bindPopup(popup_6204ae760f96658cb3101a2126c8c9ed)
+        ;
+
+        
+    
+    
+            var circle_marker_11fda019ca45297326663334b756e6dd = L.circleMarker(
+                [25.0276476, 121.5419256],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_4cf4795c5b352ca55f0cf00e42ab2a74 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_558526c5d66009f1af18091160c63f5e = $(`<div id="html_558526c5d66009f1af18091160c63f5e" style="width: 100.0%; height: 100.0%;">名稱: L'sød dessert coffee<br>地址: No. 43號, Lane 175, Section 2, Heping E Rd</div>`)[0];
+                popup_4cf4795c5b352ca55f0cf00e42ab2a74.setContent(html_558526c5d66009f1af18091160c63f5e);
+            
+        
+
+        circle_marker_11fda019ca45297326663334b756e6dd.bindPopup(popup_4cf4795c5b352ca55f0cf00e42ab2a74)
+        ;
+
+        
+    
+    
+            var circle_marker_1485337eaab4f7cca01a4100a656abef = L.circleMarker(
+                [24.9747396, 121.5172085],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_ea2c8305928805b279b40b884770bdc1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_00440a34c4cf898679611b05da287908 = $(`<div id="html_00440a34c4cf898679611b05da287908" style="width: 100.0%; height: 100.0%;">名稱: 阿妹飲冰茶室Amay Traditional Dessert Store (冰品/飲品/傳統甜品店)<br>地址: No. 333號, Anmin St</div>`)[0];
+                popup_ea2c8305928805b279b40b884770bdc1.setContent(html_00440a34c4cf898679611b05da287908);
+            
+        
+
+        circle_marker_1485337eaab4f7cca01a4100a656abef.bindPopup(popup_ea2c8305928805b279b40b884770bdc1)
+        ;
+
+        
+    
+    
+            var circle_marker_db838cd786f8e9dfde6ab1e1ab1af4fd = L.circleMarker(
+                [25.0305521, 121.5541612],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_0cdb2171ea073747a58211176bf147e1);
+        
+    
+        var popup_3b82c625e860c2f0af8dd7bd78723351 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c902790e67264fe6e79847ed66f4cafa = $(`<div id="html_c902790e67264fe6e79847ed66f4cafa" style="width: 100.0%; height: 100.0%;">名稱: 愛玉之夢遊仙草<br>地址: No. 56, Tonghua St</div>`)[0];
+                popup_3b82c625e860c2f0af8dd7bd78723351.setContent(html_c902790e67264fe6e79847ed66f4cafa);
+            
+        
+
+        circle_marker_db838cd786f8e9dfde6ab1e1ab1af4fd.bindPopup(popup_3b82c625e860c2f0af8dd7bd78723351)
+        ;
+
+        
+    
+</script>
+</html>
